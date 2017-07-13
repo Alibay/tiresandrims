@@ -15,7 +15,9 @@ class CreateBrandModelsTable extends Migration
     {
         Schema::create('brand_models', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('name');
+            $table->integer('brand_id')->unsigned();
+            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
         });
     }
 

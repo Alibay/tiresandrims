@@ -15,7 +15,9 @@ class CreateModelModificationsTable extends Migration
     {
         Schema::create('model_modifications', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('name');
+            $table->integer('generation_id')->unsigned();
+            $table->foreign('generation_id')->references('id')->on('model_generations')->onDelete('cascade');
         });
     }
 

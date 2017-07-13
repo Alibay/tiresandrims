@@ -15,7 +15,11 @@ class CreateRimModelsTable extends Migration
     {
         Schema::create('rim_models', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('name');
+            $table->integer('manufacturer_id')->unsigned();
+            $table->integer('rim_id')->unsigned();
+            $table->foreign('manufacturer_id')->references('id')->on('manufacturers')->onDelete('cascade');
+            $table->foreign('rim_id')->references('id')->on('rims')->onDelete('cascade');
         });
     }
 

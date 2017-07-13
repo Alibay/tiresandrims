@@ -15,7 +15,10 @@ class CreateModelGenerationsTable extends Migration
     {
         Schema::create('model_generations', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->integer('year_from')->unsigned();
+            $table->integer('year_to')->unsigned();
+            $table->integer('model_id')->unsigned();
+            $table->foreign('model_id')->references('id')->on('brand_models')->onDelete('cascade');
         });
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTireModelsTable extends Migration
+class CreateEquipmentTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,15 @@ class CreateTireModelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tire_models', function (Blueprint $table) {
+        Schema::create('equipments', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->integer('manufacturer_id')->unsigned();
+            $table->integer('modification_id')->unsigned();
+            $table->integer('rim_id')->unsigned();
             $table->integer('tire_id')->unsigned();
-            $table->foreign('manufacturer_id')->references('id')->on('manufacturers')->onDelete('cascade');
+            $table->foreign('modification_id')->references('id')->on('model_modifications')->onDelete('cascade');
+            $table->foreign('rim_id')->references('id')->on('rims')->onDelete('cascade');
             $table->foreign('tire_id')->references('id')->on('tires')->onDelete('cascade');
+            $table->boolean('from_factory');
         });
     }
 
@@ -30,6 +32,6 @@ class CreateTireModelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tire_models');
+        Schema::dropIfExists('equipments');
     }
 }

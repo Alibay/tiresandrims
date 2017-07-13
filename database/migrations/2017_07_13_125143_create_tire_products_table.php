@@ -15,7 +15,9 @@ class CreateTireProductsTable extends Migration
     {
         Schema::create('tire_products', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->integer('price')->unsigned();
+            $table->integer('tire_model_id')->unsigned();
+            $table->foreign('tire_model_id')->references('id')->on('tire_models')->onDelete('cascade');
         });
     }
 

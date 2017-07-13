@@ -15,7 +15,7 @@ class CreateBoltsTable extends Migration
     {
         Schema::create('bolts', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('name')->unique();
         });
     }
 

@@ -15,7 +15,9 @@ class CreateRimProductsTable extends Migration
     {
         Schema::create('rim_products', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->integer('price')->unsigned();
+            $table->integer('rim_model_id')->unsigned();
+            $table->foreign('rim_model_id')->references('id')->on('rim_models')->onDelete('cascade');
         });
     }
 

@@ -15,7 +15,15 @@ class CreateTiresTable extends Migration
     {
         Schema::create('tires', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->float('width', 8, 1)->unsigned();
+            $table->float('height', 8, 1)->unsigned();
+            $table->float('radius', 8, 1)->unsigned();
+            $table->enum('season', ['WINTER', 'SUMMER', 'ALL']);
+            $table->boolean('xl');
+            $table->boolean('fr');
+            $table->boolean('zr');
+            $table->boolean('run_flat');
+            $table->boolean('thorns');
         });
     }
 
