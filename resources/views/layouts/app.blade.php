@@ -28,7 +28,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
+                    <a class="navbar-brand" href="{{ route('home') }}">
                         {{ config('app.name', 'Laravel') }}
                     </a>
                 </div>
@@ -47,6 +47,9 @@
                             <li><a href="{{ url('login') }}">@lang('site.login')</a></li>
                             <li><a href="{{ url('register') }}">@lang('site.register')</a></li>
                         @else
+                            @if (Sentinel::inRole('manager') || Sentinel::inRole('admin'))
+                                <li><a href="{{ route('dashboard') }}"> @lang('site.dashboard')</a></li>
+                            @endif
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Sentinel::getUser()->first_name }} <span class="caret"></span>
