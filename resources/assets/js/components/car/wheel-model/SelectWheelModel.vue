@@ -31,6 +31,16 @@
 
 <script>
     export default {
-        props: ['data']
+        props: ['data'],
+
+        methods: {
+            onManufacturerChange: function () {
+
+            },
+
+            onManufacturerModelChange: function () {
+
+            },
+        }
     }
 </script>

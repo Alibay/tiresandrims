@@ -17,7 +17,7 @@ class CreateRimsTable extends Migration
             $table->increments('id');
             $table->float('width', 8, 1)->unsigned();
             // Тип кромки обода
-            $table->enum('flange', ['J', 'JJ', 'JK', 'K', 'B', 'D', 'P']);
+            $table->enum('flange', ['J', 'JJ', 'JK', 'K', 'B', 'D', 'P'])->nullable();
             $table->float('diameter', 8, 1);
             // вылет
             $table->integer('et');
@@ -26,7 +26,7 @@ class CreateRimsTable extends Migration
             $table->integer('mounting_hole')->unsigned();
             // диаметр разболтовки
             $table->float('pcd', 8, 1);
-            $table->float('xfactor', 8, 1);
+            $table->float('xfactor', 8, 1)->default(0);
             $table->enum('symmetry', ['S', 'A'])->nullable();
         });
     }

@@ -15,6 +15,7 @@ class CreateGenerationsTable extends Migration
     {
         Schema::create('car_generations', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name')->nullable();
             $table->integer('year_from')->unsigned();
             $table->integer('year_to')->unsigned();
             $table->integer('model_id')->unsigned();

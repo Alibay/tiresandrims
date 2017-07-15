@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/brands/{brandId}/models', 'Car\ModelController@apiFindModels')->name('api-brand-models');
 Route::get('/models/{modelId}/generations', 'Car\GenerationController@apiFindGenerations')->name('api-model-generations');
 Route::get('/generations/{generationId}/modifications', 'Car\ModificationController@apiFindModifications')->name('api-generation-modifications');
+Route::get('/modifications/{modificationId}/equipments', 'Car\EquipmentController@apiFindEquipments')->name('api-modification-equipments');

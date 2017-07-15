@@ -12182,7 +12182,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;var _typeof = typeof Symbol === "function" && 
 
             absolute: false,
             rootUrl: 'http://localhost',
-            routes: [{ "host": null, "methods": ["GET", "HEAD"], "uri": "api\/user", "name": null, "action": "Closure" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/brands\/{brandId}\/models", "name": "api-brand-models", "action": "App\Http\Controllers\Car\ModelController@apiFindModels" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/models\/{modelId}\/generations", "name": "api-model-generations", "action": "App\Http\Controllers\Car\GenerationController@apiFindGenerations" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/generations\/{generationId}\/modifications", "name": "api-generation-modifications", "action": "App\Http\Controllers\Car\ModificationController@apiFindModifications" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "register", "name": "register", "action": "App\Http\Controllers\AuthController@showRegisterForm" }, { "host": null, "methods": ["POST"], "uri": "register", "name": null, "action": "App\Http\Controllers\AuthController@register" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login", "name": "login", "action": "App\Http\Controllers\AuthController@showLoginForm" }, { "host": null, "methods": ["POST"], "uri": "login", "name": null, "action": "App\Http\Controllers\AuthController@login" }, { "host": null, "methods": ["POST"], "uri": "logout", "name": "logout", "action": "App\Http\Controllers\AuthController@logout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "dashboard", "name": "dashboard", "action": "App\Http\Controllers\HomeController@dashboard" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "\/", "name": "home", "action": "App\Http\Controllers\HomeController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "search-rims-by-car", "name": "rim-search-by-car", "action": "App\Http\Controllers\Car\RimController@searchByCar" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "search-rims-by-params", "name": "rim-search-by-params", "action": "App\Http\Controllers\Car\RimController@searchByParams" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "search-tires-by-car", "name": "tire-search-by-car", "action": "App\Http\Controllers\HomeController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "products", "name": "products", "action": "App\Http\Controllers\Shop\ProductController@show" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "my-cars", "name": "my-cars", "action": "AppHttpControllersUserController@myCars" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "my-orders", "name": "my-orders", "action": "AppHttpControllersUserController@myOrders" }],
+            routes: [{ "host": null, "methods": ["GET", "HEAD"], "uri": "api\/user", "name": null, "action": "Closure" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/brands\/{brandId}\/models", "name": "api-brand-models", "action": "App\Http\Controllers\Car\ModelController@apiFindModels" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/models\/{modelId}\/generations", "name": "api-model-generations", "action": "App\Http\Controllers\Car\GenerationController@apiFindGenerations" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/generations\/{generationId}\/modifications", "name": "api-generation-modifications", "action": "App\Http\Controllers\Car\ModificationController@apiFindModifications" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/modifications\/{modificationId}\/equipments", "name": "api-modification-equipments", "action": "App\Http\Controllers\Car\EquipmentController@apiFindEquipments" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "register", "name": "register", "action": "App\Http\Controllers\AuthController@showRegisterForm" }, { "host": null, "methods": ["POST"], "uri": "register", "name": null, "action": "App\Http\Controllers\AuthController@register" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login", "name": "login", "action": "App\Http\Controllers\AuthController@showLoginForm" }, { "host": null, "methods": ["POST"], "uri": "login", "name": null, "action": "App\Http\Controllers\AuthController@login" }, { "host": null, "methods": ["POST"], "uri": "logout", "name": "logout", "action": "App\Http\Controllers\AuthController@logout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "dashboard", "name": "dashboard", "action": "App\Http\Controllers\HomeController@dashboard" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "\/", "name": "home", "action": "App\Http\Controllers\HomeController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "search-rims-by-car", "name": "rim-search-by-car", "action": "App\Http\Controllers\Car\RimController@searchByCar" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "search-rims-by-params", "name": "rim-search-by-params", "action": "App\Http\Controllers\Car\RimController@searchByParams" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "search-tires-by-car", "name": "tire-search-by-car", "action": "App\Http\Controllers\HomeController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "products", "name": "products", "action": "App\Http\Controllers\Shop\ProductController@show" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "my-cars", "name": "my-cars", "action": "AppHttpControllersUserController@myCars" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "my-orders", "name": "my-orders", "action": "AppHttpControllersUserController@myOrders" }],
             prefix: '',
 
             route: function route(name, parameters, _route) {
@@ -42355,6 +42355,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Select2_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__common_Select2_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__equipment_EquipmentListItem_vue__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__equipment_EquipmentListItem_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__equipment_EquipmentListItem_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__wheel_model_SelectWheelModel_vue__ = __webpack_require__(88);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__wheel_model_SelectWheelModel_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__wheel_model_SelectWheelModel_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modification_SelectModification_vue__ = __webpack_require__(91);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__modification_SelectModification_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__modification_SelectModification_vue__);
 //
 //
 //
@@ -42375,81 +42379,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+
 
 
 
@@ -42459,18 +42390,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     data: function data() {
         return {
-            selectedBrand: 0,
-            selectedModel: 0,
-            selectedGeneration: 0,
+            //                selectedBrand: 0,
+            //                selectedModel: 0,
+            //                selectedGeneration: 0,
             selectedModification: 0,
 
-            modelsCache: {},
-            modificationsCache: {},
-            generationsCache: {},
+            //                modelsCache: {},
+            //                modificationsCache: {},
+            //                generationsCache: {},
             equipmentsCache: {},
 
-            models: [],
-            generations: [],
+            //                models: [],
+            //                generations: [],
             modifications: [],
 
             factoryEquipments: [],
@@ -42491,86 +42422,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
     methods: {
-        onBrandChange: function onBrandChange() {
-            var _this = this;
-
-            this.selectedModel = 0;
-            this.selectedGeneration = 0;
-            this.selectedModification = 0;
-
-            if (this.selectedBrand == 0) {
-                this.models = [];
-                return;
-            }
-
-            if (!(this.selectedBrand in this.modelsCache)) {
-                this.$http.get(laroute.route('api-brand-models', { brandId: this.selectedBrand })).then(function (data) {
-                    _this.modelsCache[_this.selectedBrand] = _this.models = _.map(data.body, function (model) {
-                        return {
-                            id: model.id,
-                            text: model.name
-                        };
-                    });
-                });
-            } else {
-                this.models = this.modelsCache[this.selectedBrand];
-            }
-        },
-
-        onModelChange: function onModelChange() {
-            var _this2 = this;
-
-            this.selectedGeneration = 0;
-            this.selectedModification = 0;
-
-            if (this.selectedModel == 0) {
-                this.generations = [];
-                return;
-            }
-
-            if (!(this.selectedModel in this.generationsCache)) {
-                this.$http.get(laroute.route('api-model-generations', { modelId: this.selectedModel })).then(function (data) {
-                    _this2.generationsCache[_this2.selectedModel] = _this2.generations = _.map(data.body, function (g) {
-                        var yearTo = g.year_to > 0 ? g.year_to : 'present';
-                        return {
-                            id: g.id,
-                            text: g.year_from + ' - ' + yearTo
-                        };
-                    });
-                });
-            } else {
-                this.generations = this.generationsCache[this.selectedModel];
-            }
-        },
-
-        onGenerationChange: function onGenerationChange() {
-            var _this3 = this;
-
-            this.selectedModification = 0;
-
-            if (this.selectedGeneration == 0) {
-                this.modifications = [];
-                return;
-            }
-
-            if (!(this.selectedGeneration in this.modificationsCache)) {
-                this.$http.get(laroute.route('api-generation-modifications', { generationId: this.selectedGeneration })).then(function (data) {
-                    _this3.modificationsCache[_this3.selectedGeneration] = _this3.modifications = _.map(data.body, function (m) {
-                        return {
-                            id: m.id,
-                            text: m.name
-                        };
-                    });
-
-                    console.log(_this3.modifications);
-                });
-            } else {
-                this.modifications = this.modificationsCache[this.selectedGeneration];
-            }
-        },
 
         onModificationChange: function onModificationChange() {
-            var _this4 = this;
+            var _this = this;
 
             if (this.selectedModification == 0) {
                 this.equipments = [];
@@ -42579,26 +42433,22 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             if (!(this.selectedModification in this.equipmentsCache)) {
                 this.$http.get(laroute.route('api-modification-equipments', { modificationId: this.selectedModification })).then(function (data) {
-                    _this4.equipmentsCache[_this4.selectedModification] = data.body;
-                    _this4.separateEquipments(_this4.equipmentsCache[_this4.selectedModification]);
+                    _this.equipmentsCache[_this.selectedModification] = data.body;
+                    _this.separateEquipments(_this.equipmentsCache[_this.selectedModification]);
                 });
             } else {
                 this.separateEquipments(this.equipmentsCache[this.selectedModification]);
             }
         },
 
-        onManufacturerChange: function onManufacturerChange() {},
-
-        onManufacturerModelChange: function onManufacturerModelChange() {},
-
         separateEquipments: function separateEquipments(equipments) {
-            var _this5 = this;
+            var _this2 = this;
 
             _.forEach(equipments, function (eq) {
                 if (eq.from_factory) {
-                    _this5.factoryEquipments.push(eq);
+                    _this2.factoryEquipments.push(eq);
                 } else {
-                    _this5.nonFactoryEquipments.push(eq);
+                    _this2.nonFactoryEquipments.push(eq);
                 }
             });
         }
@@ -42606,7 +42456,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     components: {
         'select2': __WEBPACK_IMPORTED_MODULE_0__common_Select2_vue___default.a,
-        'equipment-list-item': __WEBPACK_IMPORTED_MODULE_1__equipment_EquipmentListItem_vue___default.a
+        'equipment-list-item': __WEBPACK_IMPORTED_MODULE_1__equipment_EquipmentListItem_vue___default.a,
+        'select-wheel-model': __WEBPACK_IMPORTED_MODULE_2__wheel_model_SelectWheelModel_vue___default.a,
+        'select-modification': __WEBPACK_IMPORTED_MODULE_3__modification_SelectModification_vue___default.a
     }
 });
 
@@ -43023,80 +42875,12 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-md-6"
-  }, [_c('div', {
-    staticClass: "form-group"
-  }, [_c('label', [_vm._v("Марка")]), _vm._v(" "), _c('select2', {
+  return _c('div', [_c('select-modification', {
     attrs: {
-      "options": _vm.transformedBrands,
-      "change": _vm.onBrandChange,
-      "minimumResultsForSearch": 5,
-      "defaultText": "Выберите марку"
-    },
-    model: {
-      value: (_vm.selectedBrand),
-      callback: function($$v) {
-        _vm.selectedBrand = $$v
-      },
-      expression: "selectedBrand"
+      "brands": _vm.brands,
+      "on-modification-change": _vm.onModificationChange
     }
-  })], 1), _vm._v(" "), _c('div', {
-    staticClass: "form-group"
-  }, [_c('label', [_vm._v("Поколение")]), _vm._v(" "), _c('select2', {
-    attrs: {
-      "options": _vm.generations,
-      "change": _vm.onGenerationChange,
-      "minimumResultsForSearch": 5,
-      "defaultText": "Выберите поколение",
-      "disabled": _vm.selectedModel == 0
-    },
-    model: {
-      value: (_vm.selectedGeneration),
-      callback: function($$v) {
-        _vm.selectedGeneration = $$v
-      },
-      expression: "selectedGeneration"
-    }
-  })], 1)]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-6"
-  }, [_c('div', {
-    staticClass: "form-group"
-  }, [_c('label', [_vm._v("Модель")]), _vm._v(" "), _c('select2', {
-    attrs: {
-      "options": _vm.models,
-      "change": _vm.onModelChange,
-      "minimumResultsForSearch": 5,
-      "defaultText": "Выберите марку",
-      "disabled": _vm.selectedBrand == 0
-    },
-    model: {
-      value: (_vm.selectedModel),
-      callback: function($$v) {
-        _vm.selectedModel = $$v
-      },
-      expression: "selectedModel"
-    }
-  })], 1), _vm._v(" "), _c('div', {
-    staticClass: "form-group"
-  }, [_c('label', [_vm._v("Модификация")]), _vm._v(" "), _c('select2', {
-    attrs: {
-      "options": _vm.modifications,
-      "change": _vm.onModificationChange,
-      "minimumResultsForSearch": 5,
-      "defaultText": "Выберите модификацию",
-      "disabled": _vm.selectedGeneration == 0
-    },
-    model: {
-      value: (_vm.selectedModification),
-      callback: function($$v) {
-        _vm.selectedModification = $$v
-      },
-      expression: "selectedModification"
-    }
-  })], 1)])]), _vm._v(" "), (_vm.selectedModification > 0) ? _c('div', [_c('div', {
+  }), _vm._v(" "), (_vm.selectedModification > 0) ? _c('div', [_c('div', {
     staticClass: "row"
   }, [(_vm.factoryEquipments.length > 0) ? _c('div', {
     staticClass: "col-md-12"
@@ -43114,53 +42898,13 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         "data": equipment
       }
     })
-  })], 2) : _vm._e()]), _vm._v(" "), _c('div', {
-    staticClass: "row"
-  }, [_c('div', {
-    staticClass: "col-md-6"
-  }, [_c('div', {
-    staticClass: "form-group"
-  }, [_c('label', [_vm._v("Производитель")]), _vm._v(" "), _c('select2', {
-    attrs: {
-      "options": [],
-      "change": _vm.onManufacturerChange,
-      "minimumResultsForSearch": 5,
-      "defaultText": "Выберите производитель",
-      "disabled": _vm.selectedBrand == 0
-    },
-    model: {
-      value: (_vm.selectedManufacturer),
-      callback: function($$v) {
-        _vm.selectedManufacturer = $$v
-      },
-      expression: "selectedManufacturer"
-    }
-  })], 1)]), _vm._v(" "), _c('div', {
-    staticClass: "col-md-6"
-  }, [_c('div', {
-    staticClass: "form-group"
-  }, [_c('label', [_vm._v("Модель")]), _vm._v(" "), _c('select2', {
-    attrs: {
-      "options": [],
-      "change": _vm.onManufacturerModelChange,
-      "minimumResultsForSearch": 5,
-      "defaultText": "Выберите модель",
-      "disabled": _vm.selectedBrand == 0
-    },
-    model: {
-      value: (_vm.selectedManufacturerModel),
-      callback: function($$v) {
-        _vm.selectedManufacturerModel = $$v
-      },
-      expression: "selectedManufacturerModel"
-    }
-  })], 1)])]), _vm._v(" "), _c('button', {
+  })], 2) : _vm._e()]), _vm._v(" "), _c('select-wheel-model'), _vm._v(" "), _c('button', {
     staticClass: "btn btn-default btn-lg",
     attrs: {
       "type": "submit",
       "disabled": _vm.selectedModification == 0
     }
-  }, [_vm._v("Искать")])]) : _vm._e()])
+  }, [_vm._v("Искать")])], 1) : _vm._e()], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -44848,6 +44592,469 @@ __webpack_require__(38);
 __webpack_require__(39);
 module.exports = __webpack_require__(40);
 
+
+/***/ }),
+/* 71 */,
+/* 72 */,
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
+/* 78 */,
+/* 79 */,
+/* 80 */,
+/* 81 */,
+/* 82 */,
+/* 83 */,
+/* 84 */,
+/* 85 */,
+/* 86 */,
+/* 87 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['data'],
+
+    methods: {
+        onManufacturerChange: function onManufacturerChange() {},
+
+        onManufacturerModelChange: function onManufacturerModelChange() {}
+    }
+});
+
+/***/ }),
+/* 88 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(4)(
+  /* script */
+  __webpack_require__(87),
+  /* template */
+  __webpack_require__(89),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/home/ibraim/projects/tiresandrims/resources/assets/js/components/car/wheel-model/SelectWheelModel.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] SelectWheelModel.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-3402aa3a", Component.options)
+  } else {
+    hotAPI.reload("data-v-3402aa3a", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 89 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('div', {
+    staticClass: "form-group"
+  }, [_c('label', [_vm._v("Производитель")]), _vm._v(" "), _c('select2', {
+    attrs: {
+      "options": [],
+      "change": _vm.onManufacturerChange,
+      "minimumResultsForSearch": 5,
+      "defaultText": "Выберите производитель",
+      "disabled": _vm.selectedBrand == 0
+    },
+    model: {
+      value: (_vm.selectedManufacturer),
+      callback: function($$v) {
+        _vm.selectedManufacturer = $$v
+      },
+      expression: "selectedManufacturer"
+    }
+  })], 1)]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6"
+  }, [_c('div', {
+    staticClass: "form-group"
+  }, [_c('label', [_vm._v("Модель")]), _vm._v(" "), _c('select2', {
+    attrs: {
+      "options": [],
+      "change": _vm.onManufacturerModelChange,
+      "minimumResultsForSearch": 5,
+      "defaultText": "Выберите модель",
+      "disabled": _vm.selectedBrand == 0
+    },
+    model: {
+      value: (_vm.selectedManufacturerModel),
+      callback: function($$v) {
+        _vm.selectedManufacturerModel = $$v
+      },
+      expression: "selectedManufacturerModel"
+    }
+  })], 1)])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-3402aa3a", module.exports)
+  }
+}
+
+/***/ }),
+/* 90 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Select2_vue__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Select2_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__common_Select2_vue__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['data'],
+
+    data: function data() {
+        return {
+            selectedBrand: 0,
+            selectedModel: 0,
+            selectedGeneration: 0,
+            selectedModification: 0,
+
+            modelsCache: {},
+            modificationsCache: {},
+            generationsCache: {},
+            equipmentsCache: {},
+
+            models: [],
+            generations: [],
+            modifications: []
+        };
+    },
+
+
+    methods: {
+        onBrandChange: function onBrandChange() {
+            var _this = this;
+
+            this.selectedModel = 0;
+            this.selectedGeneration = 0;
+            this.selectedModification = 0;
+
+            if (this.selectedBrand == 0) {
+                this.models = [];
+                return;
+            }
+
+            if (!(this.selectedBrand in this.modelsCache)) {
+                this.$http.get(laroute.route('api-brand-models', { brandId: this.selectedBrand })).then(function (data) {
+                    _this.modelsCache[_this.selectedBrand] = _this.models = _.map(data.body, function (model) {
+                        return {
+                            id: model.id,
+                            text: model.name
+                        };
+                    });
+                });
+            } else {
+                this.models = this.modelsCache[this.selectedBrand];
+            }
+        },
+
+        onModelChange: function onModelChange() {
+            var _this2 = this;
+
+            this.selectedGeneration = 0;
+            this.selectedModification = 0;
+
+            if (this.selectedModel == 0) {
+                this.generations = [];
+                return;
+            }
+
+            if (!(this.selectedModel in this.generationsCache)) {
+                this.$http.get(laroute.route('api-model-generations', { modelId: this.selectedModel })).then(function (data) {
+                    _this2.generationsCache[_this2.selectedModel] = _this2.generations = _.map(data.body, function (g) {
+                        var yearTo = g.year_to > 0 ? g.year_to : 'present';
+                        return {
+                            id: g.id,
+                            text: g.year_from + ' - ' + yearTo
+                        };
+                    });
+                });
+            } else {
+                this.generations = this.generationsCache[this.selectedModel];
+            }
+        },
+
+        onGenerationChange: function onGenerationChange() {
+            var _this3 = this;
+
+            this.selectedModification = 0;
+
+            if (this.selectedGeneration == 0) {
+                this.modifications = [];
+                return;
+            }
+
+            if (!(this.selectedGeneration in this.modificationsCache)) {
+                this.$http.get(laroute.route('api-generation-modifications', { generationId: this.selectedGeneration })).then(function (data) {
+                    _this3.modificationsCache[_this3.selectedGeneration] = _this3.modifications = _.map(data.body, function (m) {
+                        return {
+                            id: m.id,
+                            text: m.name
+                        };
+                    });
+
+                    console.log(_this3.modifications);
+                });
+            } else {
+                this.modifications = this.modificationsCache[this.selectedGeneration];
+            }
+        },
+
+        onModificationChange: function onModificationChange() {
+            var _this4 = this;
+
+            if (this.selectedModification == 0) {
+                this.equipments = [];
+                return;
+            }
+
+            if (!(this.selectedModification in this.equipmentsCache)) {
+                this.$http.get(laroute.route('api-modification-equipments', { modificationId: this.selectedModification })).then(function (data) {
+                    _this4.equipmentsCache[_this4.selectedModification] = data.body;
+                    _this4.separateEquipments(_this4.equipmentsCache[_this4.selectedModification]);
+                });
+            } else {
+                this.separateEquipments(this.equipmentsCache[this.selectedModification]);
+            }
+        }
+    },
+
+    components: {
+        'select2': __WEBPACK_IMPORTED_MODULE_0__common_Select2_vue___default.a
+    }
+});
+
+/***/ }),
+/* 91 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Component = __webpack_require__(4)(
+  /* script */
+  __webpack_require__(90),
+  /* template */
+  __webpack_require__(92),
+  /* scopeId */
+  null,
+  /* cssModules */
+  null
+)
+Component.options.__file = "/home/ibraim/projects/tiresandrims/resources/assets/js/components/car/modification/SelectModification.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] SelectModification.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-12278443", Component.options)
+  } else {
+    hotAPI.reload("data-v-12278443", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 92 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('div', {
+    staticClass: "row"
+  }, [_c('div', {
+    staticClass: "col-md-6"
+  }, [_c('div', {
+    staticClass: "form-group"
+  }, [_c('label', [_vm._v("Марка")]), _vm._v(" "), _c('select2', {
+    attrs: {
+      "options": _vm.transformedBrands,
+      "change": _vm.onBrandChange,
+      "minimumResultsForSearch": 5,
+      "defaultText": "Выберите марку"
+    },
+    model: {
+      value: (_vm.selectedBrand),
+      callback: function($$v) {
+        _vm.selectedBrand = $$v
+      },
+      expression: "selectedBrand"
+    }
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', [_vm._v("Поколение")]), _vm._v(" "), _c('select2', {
+    attrs: {
+      "options": _vm.generations,
+      "change": _vm.onGenerationChange,
+      "minimumResultsForSearch": 5,
+      "defaultText": "Выберите поколение",
+      "disabled": _vm.selectedModel == 0
+    },
+    model: {
+      value: (_vm.selectedGeneration),
+      callback: function($$v) {
+        _vm.selectedGeneration = $$v
+      },
+      expression: "selectedGeneration"
+    }
+  })], 1)]), _vm._v(" "), _c('div', {
+    staticClass: "col-md-6"
+  }, [_c('div', {
+    staticClass: "form-group"
+  }, [_c('label', [_vm._v("Модель")]), _vm._v(" "), _c('select2', {
+    attrs: {
+      "options": _vm.models,
+      "change": _vm.onModelChange,
+      "minimumResultsForSearch": 5,
+      "defaultText": "Выберите марку",
+      "disabled": _vm.selectedBrand == 0
+    },
+    model: {
+      value: (_vm.selectedModel),
+      callback: function($$v) {
+        _vm.selectedModel = $$v
+      },
+      expression: "selectedModel"
+    }
+  })], 1), _vm._v(" "), _c('div', {
+    staticClass: "form-group"
+  }, [_c('label', [_vm._v("Модификация")]), _vm._v(" "), _c('select2', {
+    attrs: {
+      "options": _vm.modifications,
+      "change": _vm.onModificationChange,
+      "minimumResultsForSearch": 5,
+      "defaultText": "Выберите модификацию",
+      "disabled": _vm.selectedGeneration == 0
+    },
+    model: {
+      value: (_vm.selectedModification),
+      callback: function($$v) {
+        _vm.selectedModification = $$v
+      },
+      expression: "selectedModification"
+    }
+  })], 1)])])
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-12278443", module.exports)
+  }
+}
 
 /***/ })
 /******/ ]);
