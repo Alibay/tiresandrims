@@ -30,6 +30,8 @@
 </template>
 
 <script>
+    import Select2 from './../../common/Select2.vue';
+
     export default {
         props: ['data'],
 
@@ -41,6 +43,10 @@
             onManufacturerModelChange: function () {
 
             },
+        },
+
+        components: {
+            'select2': Select2,
         }
     }
 </script>

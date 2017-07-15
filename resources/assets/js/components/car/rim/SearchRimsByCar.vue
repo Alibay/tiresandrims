@@ -27,20 +27,15 @@
     export default {
         props: ['brands'],
 
+        created: function () {
+            console.log(this.brands);
+        },
+
         data () {
             return {
-//                selectedBrand: 0,
-//                selectedModel: 0,
-//                selectedGeneration: 0,
                 selectedModification: 0,
 
-//                modelsCache: {},
-//                modificationsCache: {},
-//                generationsCache: {},
                 equipmentsCache: {},
-
-//                models: [],
-//                generations: [],
                 modifications: [],
 
                 factoryEquipments: [],
@@ -48,12 +43,6 @@
 
                 equipments: [],
 
-                transformedBrands: _.map(this.brands, brand => {
-                    return {
-                        id: brand.id,
-                        text: brand.name
-                    }
-                }),
 
                 selectedAnyEquipments: false
             }
@@ -61,9 +50,13 @@
 
         methods: {
 
-            onModificationChange: function () {
+            onModificationChange: function ( modification ) {
+                this.selectedModification = modification;
+
                 if (this.selectedModification == 0) {
                     this.equipments = [];
+                    this.factoryEquipments = [];
+                    this.nonFactoryEquipments = [];
                     return;
                 }
 

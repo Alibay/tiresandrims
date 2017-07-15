@@ -42388,33 +42388,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['brands'],
 
+    created: function created() {
+        console.log(this.brands);
+    },
+
     data: function data() {
         return {
-            //                selectedBrand: 0,
-            //                selectedModel: 0,
-            //                selectedGeneration: 0,
             selectedModification: 0,
 
-            //                modelsCache: {},
-            //                modificationsCache: {},
-            //                generationsCache: {},
             equipmentsCache: {},
-
-            //                models: [],
-            //                generations: [],
             modifications: [],
 
             factoryEquipments: [],
             nonFactoryEquipments: [],
 
             equipments: [],
-
-            transformedBrands: _.map(this.brands, function (brand) {
-                return {
-                    id: brand.id,
-                    text: brand.name
-                };
-            }),
 
             selectedAnyEquipments: false
         };
@@ -42423,11 +42411,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
 
-        onModificationChange: function onModificationChange() {
+        onModificationChange: function onModificationChange(modification) {
             var _this = this;
+
+            this.selectedModification = modification;
 
             if (this.selectedModification == 0) {
                 this.equipments = [];
+                this.factoryEquipments = [];
+                this.nonFactoryEquipments = [];
                 return;
             }
 
@@ -44615,6 +44607,8 @@ module.exports = __webpack_require__(40);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Select2_vue__ = __webpack_require__(57);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__common_Select2_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__common_Select2_vue__);
 //
 //
 //
@@ -44646,6 +44640,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['data'],
@@ -44654,6 +44650,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         onManufacturerChange: function onManufacturerChange() {},
 
         onManufacturerModelChange: function onManufacturerModelChange() {}
+    },
+
+    components: {
+        'select2': __WEBPACK_IMPORTED_MODULE_0__common_Select2_vue___default.a
     }
 });
 
@@ -44810,7 +44810,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['data'],
+    props: ['brands', 'onModificationChange'],
 
     data: function data() {
         return {
@@ -44826,7 +44826,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
             models: [],
             generations: [],
-            modifications: []
+            modifications: [],
+
+            transformedBrands: _.map(this.brands, function (brand) {
+                return {
+                    id: brand.id,
+                    text: brand.name
+                };
+            })
         };
     },
 
@@ -44910,22 +44917,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }
         },
 
-        onModificationChange: function onModificationChange() {
-            var _this4 = this;
-
-            if (this.selectedModification == 0) {
-                this.equipments = [];
-                return;
-            }
-
-            if (!(this.selectedModification in this.equipmentsCache)) {
-                this.$http.get(laroute.route('api-modification-equipments', { modificationId: this.selectedModification })).then(function (data) {
-                    _this4.equipmentsCache[_this4.selectedModification] = data.body;
-                    _this4.separateEquipments(_this4.equipmentsCache[_this4.selectedModification]);
-                });
-            } else {
-                this.separateEquipments(this.equipmentsCache[this.selectedModification]);
-            }
+        onLocalModificationChange: function onLocalModificationChange() {
+            this.onModificationChange(this.selectedModification);
         }
     },
 
@@ -45034,7 +45027,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('label', [_vm._v("Модификация")]), _vm._v(" "), _c('select2', {
     attrs: {
       "options": _vm.modifications,
-      "change": _vm.onModificationChange,
+      "change": _vm.onLocalModificationChange,
       "minimumResultsForSearch": 5,
       "defaultText": "Выберите модификацию",
       "disabled": _vm.selectedGeneration == 0

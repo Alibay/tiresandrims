@@ -39,7 +39,7 @@
                 <label>Модификация</label>
                 <select2
                         :options="modifications"
-                        :change="onModificationChange"
+                        :change="onLocalModificationChange"
                         :minimumResultsForSearch="5"
                         v-model="selectedModification"
                         defaultText="Выберите модификацию"
@@ -54,7 +54,7 @@
     import Select2 from './../../common/Select2.vue';
 
     export default {
-        props: ['data'],
+        props: ['brands', 'onModificationChange'],
 
         data () {
             return {
@@ -71,6 +71,13 @@
                 models: [],
                 generations: [],
                 modifications: [],
+
+                transformedBrands: _.map(this.brands, brand => {
+                    return {
+                        id: brand.id,
+                        text: brand.name
+                    }
+                }),
             }
         },
 
@@ -150,21 +157,8 @@
                 }
             },
 
-            onModificationChange: function () {
-                if (this.selectedModification == 0) {
-                    this.equipments = [];
-                    return;
-                }
-
-                if (!(this.selectedModification in this.equipmentsCache)) {
-                    this.$http.get(laroute.route('api-modification-equipments', { modificationId: this.selectedModification }))
-                            .then(data => {
-                                this.equipmentsCache[this.selectedModification] = data.body;
-                                this.separateEquipments(this.equipmentsCache[this.selectedModification]);
-                            });
-                } else {
-                    this.separateEquipments(this.equipmentsCache[this.selectedModification]);
-                }
+            onLocalModificationChange: function () {
+                this.onModificationChange(this.selectedModification);
             }
         },
 
