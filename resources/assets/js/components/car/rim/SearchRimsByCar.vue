@@ -5,46 +5,61 @@
             <div class="row">
                 <div class="col-md-12" v-if="factoryEquipments.length > 0">
                     <h3>Заводская комплектация:</h3>
-                    <equipment-list-item v-for="equipment in factoryEquipments" v-bind:data="equipment"/>
+                    <div>
+                        <div v-for="equipment in factoryEquipments">
+                            <a v-bind:href="tireUrl(equipment.tire)">
+                                <b><tire-label :data="equipment.tire" /></b>
+                            </a>
+                            <b>диск</b>: <rim-label :data="equipment.rim" />
+                            <input type="checkbox" :value="equipment.id" v-model="chosenEquipments">
+                            <bolt-label />
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-12" v-if="nonFactoryEquipments.length > 0">
                     <h3>Варианты замены:</h3>
-                    <equipment-list-item v-for="equipment in nonFactoryEquipments" v-bind:data="equipment"/>
+                    <div>
+                        <div v-for="equipment in nonFactoryEquipments">
+                            <a v-bind:href="tireUrl(equipment.tire)">
+                                <b><tire-label :data="equipment.tire" /></b>
+                            </a>
+                            <b>диск</b>: <rim-label :data="equipment.rim" />
+                            <input type="checkbox" :value="equipment.id" v-model="chosenEquipments">
+                            <bolt-label />
+                        </div>
+                    </div>
                 </div>
             </div>
-            <select-wheel-model />
-            <button type="submit" class="btn btn-default btn-lg" :disabled="selectedModification == 0">Искать</button>
+            <select-wheel-model :disabled="chosenEquipments.length == 0"/>
+            <button type="submit" class="btn btn-default btn-lg" :disabled="chosenEquipments.length == 0">Искать</button>
         </div>
     </div>
 </template>
 
 <script>
     import Select2 from './../../common/Select2.vue';
-    import EquipmentListItem from './../equipment/EquipmentListItem.vue';
     import SelectWheelModel from './../wheel-model/SelectWheelModel.vue';
     import SelectModification from './../modification/SelectModification.vue';
+    import RimLabel from './../rim/RimLabel.vue';
+    import TireLabel from './../tire/TireLabel.vue';
+    import BoltLabel from './../bolt/BoltLabel.vue';
 
     export default {
         props: ['brands'],
 
-        created: function () {
-            console.log(this.brands);
-        },
-
         data () {
             return {
                 selectedModification: 0,
-
                 equipmentsCache: {},
                 modifications: [],
-
                 factoryEquipments: [],
                 nonFactoryEquipments: [],
-
                 equipments: [],
+                chosenEquipments: [],
 
-
-                selectedAnyEquipments: false
+                tireUrl: function ( tire ) {
+                    return laroute.route('tire-search-by-car');
+                },
             }
         },
 
@@ -79,14 +94,27 @@
                         this.nonFactoryEquipments.push(eq);
                     }
                 });
-            }
+            },
+
+            /*changeEquipment: function ( equipment ) {
+                if (equipment.id in this.chosenEquipments) {
+                    delete this.chosenEquipments[equipment.id];
+                } else {
+                    this.chosenEquipments[equipment.id] = 0;
+                }
+
+                this.selectedAnyEquipments =_.isEmpty(this.chosenEquipment);
+                console.log(this.selectedAnyEquipments);
+            }*/
         },
 
         components: {
             'select2': Select2,
-            'equipment-list-item': EquipmentListItem,
             'select-wheel-model': SelectWheelModel,
             'select-modification': SelectModification,
+            'rim-label': RimLabel,
+            'tire-label': TireLabel,
+            'bolt-label': BoltLabel,
         }
     }
 </script>

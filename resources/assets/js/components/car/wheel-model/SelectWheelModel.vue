@@ -9,7 +9,7 @@
                         :minimumResultsForSearch="5"
                         v-model="selectedManufacturer"
                         defaultText="Выберите производитель"
-                        :disabled="selectedBrand == 0">
+                        :disabled="disabled">
                 </select2>
             </div>
         </div>
@@ -22,7 +22,7 @@
                         :minimumResultsForSearch="5"
                         v-model="selectedManufacturerModel"
                         defaultText="Выберите модель"
-                        :disabled="selectedBrand == 0">
+                        :disabled="disabled">
                 </select2>
             </div>
         </div>
@@ -33,7 +33,7 @@
     import Select2 from './../../common/Select2.vue';
 
     export default {
-        props: ['data'],
+        props: ['data', 'disabled'],
 
         methods: {
             onManufacturerChange: function () {
