@@ -16,4 +16,13 @@ class RimController extends Controller
             'brands' => $brands
         ]);
     }
+
+    public function searchByParams()
+    {
+        $brands = Brand::all();
+
+        return view('car.rim.searchByParams', [
+            'brands' => $brands
+        ]);
+    }
 }

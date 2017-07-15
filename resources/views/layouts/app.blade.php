@@ -38,6 +38,7 @@
                     <ul class="nav navbar-nav">
                         <li><a href="{{ route('rim-search-by-car') }}">@lang('site.rims')</a></li>
                         <li><a href="{{ route('tire-search-by-car') }}">@lang('site.tires')</a></li>
+                        <li><a href="{{ route('tire-search-by-car') }}">Шинный калькулятор</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -56,6 +57,10 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    @if (Sentinel::inRole('member'))
+                                        <li><a href="{{ route('my-cars') }}"> Мои автомобили</a></li>
+                                        <li><a href="{{ route('my-orders') }}"> Мои заказы</a></li>
+                                    @endif
                                     <li>
                                         <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Car;
 
-use App\Equipment;
+use App\Car\Equipment;
+use App\Http\Controllers\Controller;
 
 class EquipmentController extends Controller
 {

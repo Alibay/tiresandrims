@@ -6,8 +6,8 @@
         <div class="col-md-12">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h1 class="panel-title">Поиск дисков по автомобилю
-                        <a href="{{ route('rim-search-by-params') }}" class="btn btn-sm btn-default pull-right">Поиск по параметрам</a>
+                    <h1 class="panel-title">Поиск дисков по параметрам
+                        <a href="{{ route('rim-search-by-car') }}" class="btn btn-sm btn-default pull-right">Поиск по автомобилю</a>
                         <div class="clearfix"></div>
                     </h1>
                 </div>
