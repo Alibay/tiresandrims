@@ -178,7 +178,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
-
+        Lord\Laroute\LarouteServiceProvider::class,
     ],
 
     /*

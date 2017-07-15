@@ -18,8 +18,10 @@ Route::post('/login', 'AuthController@login');
 Route::post('/logout', 'AuthController@logout')->name('logout');
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/search-rims-by-car', 'HomeController@index')->name('rim-search-by-car');
+Route::get('/search-rims-by-car', 'Car\RimController@searchByCar')->name('rim-search-by-car');
 Route::get('/search-tires-by-car', 'HomeController@index')->name('tire-search-by-car');
 
 Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
+
+Route::get('/products', 'Shop\ProductController@show')->name('products');
 
