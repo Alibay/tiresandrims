@@ -16,7 +16,6 @@ class CreateWheelModelsTable extends Migration
         Schema::create('car_wheel_models', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('wheel_id')->unsigned();
             $table->integer('wheel_brand_id')->unsigned();
             $table->foreign('wheel_brand_id')->references('id')->on('car_wheel_brands')->onDelete('cascade');
             $table->enum('type', ['RIM', 'TIRE']);
