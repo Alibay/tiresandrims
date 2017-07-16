@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Car;
 
 use App\Car\Brand;
+use App\Car\Equipment;
 use App\Car\Generation;
 use App\Car\Model;
 use App\Car\Modification;
 use App\Http\Controllers\Controller;
+use Illuminate\Database\Eloquent\Collection;
 
 class RimController extends Controller
 {
@@ -22,17 +24,18 @@ class RimController extends Controller
         $params = [
             'brands' => $brands,
             'selectedBrand' => 0,
-            'models' => [],
+            'models' => new Collection(),
             'selectedModel' => 0,
-            'generations' => [],
+            'generations' => new Collection(),
             'selectedGeneration' => 0,
-            'modifications' => [],
+            'modifications' => new Collection(),
             'selectedModification' => 0,
+            'equipments' => new Collection(),
         ];
 
         if ($brandName != null) {
             foreach ($brands as $brand) {
-                if (strtolower($brand->name) == $brandName) {
+                if (strtolower($brand->name) == strtolower($brandName)) {
                     $params['selectedBrand'] = $brand->id;
                 }
             }
@@ -43,7 +46,7 @@ class RimController extends Controller
 
             if ($modelName != null) {
                 foreach ($params['models'] as $model) {
-                    if (strtolower($model->name) == $modelName) {
+                    if (strtolower($model->name) == strtolower($modelName)) {
                         $params['selectedModel'] = $model->id;
                     }
                 }
@@ -74,11 +77,17 @@ class RimController extends Controller
 
             if ($modificationName != null) {
                 foreach ($params['modifications'] as $modification) {
-                    if (strtolower($modification->name) == $modificationName) {
+                    if (strtolower($modification->name) == strtolower($modificationName)) {
                         $params['selectedModification'] = $modification->id;
                     }
                 }
             }
+        }
+
+        if ($params['selectedModification']) {
+            $params['equipments'] = Equipment::with(['rim', 'tire'])
+                ->where('modification_id', $params['selectedModification'])
+                ->get();
         }
 
         return view('car.rim.searchByCar', $params);

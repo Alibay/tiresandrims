@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h1 class="panel-title">Поиск дисков по автомобилю
@@ -16,7 +16,8 @@
                             :brands="{{ $brands }}"
                             :init-models="{{ $models }}"
                             :init-generations="{{ $generations }}"
-                            :init-modifications="{{ $generations }}"
+                            :init-modifications="{{ $modifications }}"
+                            :init-equipments="{{ $equipments }}"
                             :init-selected-brand="{{ $selectedBrand }}"
                             :init-selected-model="{{ $selectedModel }}"
                             :init-selected-generation="{{ $selectedGeneration }}"

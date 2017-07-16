@@ -11,7 +11,7 @@
                 :initSelectedModification="initSelectedModification"
                 :on-modification-change="onModificationChange"
         />
-        <div v-if="selectedModification > 0">
+        <div v-if="equipments.length > 0">
             <div class="row">
                 <div class="col-md-12" v-if="factoryEquipments.length > 0">
                     <h3>Заводская комплектация:</h3>
@@ -40,7 +40,7 @@
                     </div>
                 </div>
             </div>
-            <select-wheel-model :disabled="chosenEquipments.length == 0"/>
+            <select-detail-model :disabled="chosenEquipments.length == 0"/>
             <div class="row">
                 <div class="col-md-12">
                     <label for="byParams">Подбор: строго по параметрам</label>
@@ -129,7 +129,7 @@
 
 <script>
     import Select2 from './../../common/Select2.vue';
-    import SelectDetailModel from './../detail/SelectWheelModel.vue';
+    import SelectDetailModel from './../detail-model/SelectDetailModel.vue';
     import SelectModification from './../modification/SelectModification.vue';
     import RimLabel from './../rim/RimLabel.vue';
     import TireLabel from './../tire/TireLabel.vue';
@@ -145,10 +145,16 @@
             'initModels',
             'initSelectedModel',
             'initGenerations',
+            'initEquipments',
             'initModifications',
             'initSelectedGeneration',
             'initSelectedModification',
         ],
+
+        created: function () {
+            this.equipments = this.initEquipments;
+            this.separateEquipments(this.equipments);
+        },
 
         data () {
             return {
@@ -203,22 +209,29 @@
                 if (!(this.selectedModification in this.equipmentsCache)) {
                     this.$http.get(laroute.route('api-modification-equipments', { modificationId: this.selectedModification }))
                         .then(data => {
-                            this.equipmentsCache[this.selectedModification] = data.body;
+                            this.equipmentsCache[this.selectedModification] = this.equipments = data.body;
                             this.separateEquipments(this.equipmentsCache[this.selectedModification]);
                         });
                 } else {
+                    this.equipments = this.equipmentsCache[this.selectedModification];
                     this.separateEquipments(this.equipmentsCache[this.selectedModification]);
                 }
             },
 
             separateEquipments: function ( equipments ) {
+                let factoryEquipments = [];
+                let nonFactoryEquipments = [];
+
                 _.forEach(equipments, eq => {
                     if (eq.from_factory) {
-                        this.factoryEquipments.push(eq);
+                        factoryEquipments.push(eq);
                     } else {
-                        this.nonFactoryEquipments.push(eq);
+                        nonFactoryEquipments.push(eq);
                     }
                 });
+
+                this.factoryEquipments = factoryEquipments;
+                this.nonFactoryEquipments = nonFactoryEquipments;
             },
         },
 
