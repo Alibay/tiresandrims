@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateWheelModelsTable extends Migration
+class CreateDetailModelsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateWheelModelsTable extends Migration
      */
     public function up()
     {
-        Schema::create('car_wheel_models', function (Blueprint $table) {
+        Schema::create('car_detail_models', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->integer('wheel_brand_id')->unsigned();
-            $table->foreign('wheel_brand_id')->references('id')->on('car_wheel_brands')->onDelete('cascade');
+            $table->integer('detail_brand_id')->unsigned();
+            $table->foreign('detail_brand_id')->references('id')->on('car_detail_brands')->onDelete('cascade');
             $table->enum('type', ['RIM', 'TIRE']);
         });
     }
@@ -29,6 +29,6 @@ class CreateWheelModelsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('car_wheel_models');
+        Schema::dropIfExists('car_detail_models');
     }
 }

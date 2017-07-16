@@ -179,6 +179,7 @@ return [
 
         Cartalyst\Sentinel\Laravel\SentinelServiceProvider::class,
         Lord\Laroute\LarouteServiceProvider::class,
+        Mnabialek\LaravelSqlLogger\Providers\ServiceProvider::class,
     ],
 
     /*

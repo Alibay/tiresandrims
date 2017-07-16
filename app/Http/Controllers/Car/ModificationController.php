@@ -10,7 +10,7 @@ class ModificationController extends Controller
 
     public function apiFindModifications ( $generationId )
     {
-        return Modification::all()->where('generation_id', $generationId);
+        return Modification::where('generation_id', $generationId)->get();
     }
 
 }

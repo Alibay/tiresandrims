@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-5">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h1 class="panel-title">Поиск дисков по автомобилю
@@ -12,7 +12,16 @@
                     </h1>
                 </div>
                 <div class="panel-body">
-                    <search-rims-by-car :brands="{{ $brands }}" />
+                    <search-rims-by-car
+                            :brands="{{ $brands }}"
+                            :init-models="{{ $models }}"
+                            :init-generations="{{ $generations }}"
+                            :init-modifications="{{ $generations }}"
+                            :init-selected-brand="{{ $selectedBrand }}"
+                            :init-selected-model="{{ $selectedModel }}"
+                            :init-selected-generation="{{ $selectedGeneration }}"
+                            :init-selected-modification="{{ $selectedModification }}"
+                    />
                 </div>
             </div>
         </div>

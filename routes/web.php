@@ -20,7 +20,11 @@ Route::post('/logout', 'AuthController@logout')->name('logout');
 Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/search-rims-by-car', 'Car\RimController@searchByCar')->name('rim-search-by-car');
+//Route::get('/poisk-diskov-po-avto', 'Car\RimController@searchByCar')->name('rim-search-by-car');
+//Route::get('/poisk-diskov-po-avto/{brand}', 'Car\RimController@searchByCar')->name('rim-search-by-car-2');
+//Route::get('/poisk-diskov-po-avto/{brand}/{model}', 'Car\RimController@searchByCar')->name('rim-search-by-car-3');
+Route::get('/poisk-diskov-po-avto/{brand?}/{model?}/{generation?}/{modification?}', 'Car\RimController@searchByCar')->name('rim-search-by-car');
+
 Route::get('/search-rims-by-params', 'Car\RimController@searchByParams')->name('rim-search-by-params');
 Route::get('/search-tires-by-car', 'HomeController@index')->name('tire-search-by-car');
 

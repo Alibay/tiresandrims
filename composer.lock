@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "256ba12675250d9c10e15cd46f843ef6",
+    "content-hash": "678d30b0471647c155ebb1b239b95bb1",
     "packages": [
         {
             "name": "cartalyst/sentinel",
@@ -687,6 +687,49 @@
                 "routing"
             ],
             "time": "2017-06-29T09:34:21+00:00"
+        },
+        {
+            "name": "mnabialek/laravel-sql-logger",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/mnabialek/laravel-sql-logger.git",
+                "reference": "1c6e0e054bcaf69b7ec83537f15f0300de29806e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/mnabialek/laravel-sql-logger/zipball/1c6e0e054bcaf69b7ec83537f15f0300de29806e",
+                "reference": "1c6e0e054bcaf69b7ec83537f15f0300de29806e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "5.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Mnabialek\\LaravelSqlLogger\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marcin Nabiałek",
+                    "email": "gitre@nabialek.org"
+                }
+            ],
+            "description": "Log SQL queries in Laravel/Lumen framework",
+            "keywords": [
+                "laravel",
+                "log",
+                "logger",
+                "lumen",
+                "sql"
+            ],
+            "time": "2017-01-24T19:28:44+00:00"
         },
         {
             "name": "monolog/monolog",

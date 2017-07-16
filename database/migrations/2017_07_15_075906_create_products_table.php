@@ -17,8 +17,9 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->integer('price')->unsigned();
-            $table->integer('wheel_model_id')->unsigned();
-            $table->foreign('wheel_model_id')->references('id')->on('car_wheel_models')->onDelete('cascade');
+            $table->integer('detail_id')->unsigned();
+            $table->integer('detail_model_id')->unsigned();
+            $table->foreign('detail_model_id')->references('id')->on('car_detail_models')->onDelete('cascade');
         });
     }
 

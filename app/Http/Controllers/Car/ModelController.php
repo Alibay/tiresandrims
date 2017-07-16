@@ -10,7 +10,7 @@ class ModelController extends Controller
 
     public function apiFindModels ( $brandId )
     {
-        return Model::all()->where('brand_id', $brandId);
+        return Model::where('brand_id', $brandId)->get();
     }
 
 }

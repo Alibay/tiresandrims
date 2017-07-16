@@ -26,6 +26,7 @@
         <div class="col-md-6">
             <div class="form-group">
                 <label>Модель</label>
+
                 <select2
                         :options="models"
                         :change="onModelChange"
@@ -54,7 +55,38 @@
     import Select2 from './../../common/Select2.vue';
 
     export default {
-        props: ['brands', 'onModificationChange'],
+        props: [
+            'brands',
+            'initSelectedBrand',
+            'initModels',
+            'initSelectedModel',
+            'initSelectedModel',
+            'initSelectedModel',
+            'initGenerations',
+            'initModifications',
+            'initSelectedGeneration',
+            'initSelectedModification',
+            'onModificationChange',
+        ],
+
+        created: function () {
+            this.selectedBrand = this.initSelectedBrand;
+            this.selectedModel = this.initSelectedModel;
+            this.selectedGeneration = this.initSelectedGeneration;
+            this.selectedModification = this.initSelectedModification;
+
+            this.modelsCache[this.selectedBrand] = this.transformModels(this.initModels);
+            this.models = this.modelsCache[this.selectedBrand];
+
+            this.generationsCache[this.selectedModel] = this.transformGenerations(this.initGenerations);
+            this.generations = this.generationsCache[this.selectedModel];
+
+            console.log(this.initGenerations);
+            console.log(this.generations);
+
+            this.modificationsCache[this.selectedGeneration] = this.transformModifications(this.initModifications);
+            this.modifications = this.modificationsCache[this.selectedGeneration];
+        },
 
         data () {
             return {
@@ -95,13 +127,8 @@
                 if (!(this.selectedBrand in this.modelsCache)) {
                     this.$http.get(laroute.route('api-brand-models', { brandId: this.selectedBrand }))
                             .then(data => {
-                        this.modelsCache[this.selectedBrand] = this.models = _.map(data.body, model => {
-                                return {
-                                    id: model.id,
-                                    text: model.name
-                                };
-                });
-                })
+                        this.modelsCache[this.selectedBrand] = this.models = this.transformModels(data.body);
+                    })
                 } else {
                     this.models = this.modelsCache[this.selectedBrand];
                 }
@@ -119,13 +146,7 @@
                 if (!(this.selectedModel in this.generationsCache)) {
                     this.$http.get(laroute.route('api-model-generations', { modelId: this.selectedModel }))
                             .then(data => {
-                                this.generationsCache[this.selectedModel] = this.generations = _.map(data.body, g => {
-                                    let yearTo = g.year_to > 0 ? g.year_to : 'present';
-                                    return {
-                                        id: g.id,
-                                        text: `${g.year_from} - ${yearTo}`
-                                    };
-                                });
+                                this.generationsCache[this.selectedModel] = this.generations = this.transformGenerations(data.body);
                             });
                 } else {
                     this.generations = this.generationsCache[this.selectedModel];
@@ -143,12 +164,7 @@
                 if (!(this.selectedGeneration in this.modificationsCache)) {
                     this.$http.get(laroute.route('api-generation-modifications', { generationId: this.selectedGeneration }))
                             .then(data => {
-                        this.modificationsCache[this.selectedGeneration] = this.modifications = _.map(data.body, m => {
-                                return {
-                                    id: m.id,
-                                    text: m.name
-                                };
-                });
+                        this.modificationsCache[this.selectedGeneration] = this.modifications = this.transformModifications(data.body);
 
                     console.log(this.modifications);
                 });
@@ -159,7 +175,35 @@
 
             onLocalModificationChange: function () {
                 this.onModificationChange(this.selectedModification);
-            }
+            },
+
+            transformModels: function (models) {
+                return _.map(models, model => {
+                    return {
+                        id: model.id,
+                        text: model.name
+                    };
+                });
+            },
+
+            transformGenerations: function (generations) {
+                return _.map(generations, g => {
+                    let yearTo = g.year_to > 0 ? g.year_to : 'present';
+                    return {
+                        id: g.id,
+                        text: `${g.year_from} - ${yearTo}`
+                    };
+                });
+            },
+
+            transformModifications: function (modifications) {
+                return _.map(modifications, modification => {
+                    return {
+                        id: modification.id,
+                        text: modification.name
+                    };
+                });
+            },
         },
 
         components: {

@@ -10,7 +10,7 @@ class GenerationController extends Controller
 
     public function apiFindGenerations ( $modelId )
     {
-        return Generation::all()->where('model_id', $modelId);
+        return Generation::where('model_id', $modelId)->get();
     }
 
 }

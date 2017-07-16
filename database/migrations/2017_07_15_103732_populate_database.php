@@ -100,6 +100,41 @@ class PopulateDatabase extends Migration
             ['id' => 5, 'modification_id' => 8, 'rim_id' => 5, 'tire_id' => 3, 'from_factory' => 0],
             ['id' => 6, 'modification_id' => 8, 'rim_id' => 6, 'tire_id' => 4, 'from_factory' => 0],
         ]);
+
+        DB::table('car_detail_brands')->insert([
+            ['id' => 1, 'name' => 'Alutec'],
+            ['id' => 2, 'name' => 'Arbet'],
+            ['id' => 3, 'name' => 'Autec'],
+            ['id' => 4, 'name' => 'Bobet'],
+            ['id' => 5, 'name' => 'Dezent'],
+            ['id' => 6, 'name' => 'Mak'],
+            ['id' => 7, 'name' => 'Replay'],
+            ['id' => 8, 'name' => 'Replica'],
+            ['id' => 9, 'name' => 'Ronal'],
+            ['id' => 10, 'name' => 'Tecklina'],
+            ['id' => 11, 'name' => 'TRW'],
+            ['id' => 12, 'name' => 'ZF'],
+        ]);
+
+        DB::table('car_detail_models')->insert([
+            ['id' => 1, 'name' => 'Blizzard', 'type' => 'RIM', 'detail_brand_id' => 1],
+            ['id' => 2, 'name' => '1 Silver', 'type' => 'RIM', 'detail_brand_id' => 2],
+            ['id' => 3, 'name' => '1 Black Matt', 'type' => 'RIM', 'detail_brand_id' => 2],
+
+            ['id' => 4, 'name' => 'SK78 S', 'type' => 'RIM', 'detail_brand_id' => 7],
+            ['id' => 5, 'name' => 'VV139 GMF', 'type' => 'RIM', 'detail_brand_id' => 7],
+            ['id' => 6, 'name' => 'SK67 SF', 'type' => 'RIM', 'detail_brand_id' => 7],
+            ['id' => 7, 'name' => 'VV177 GMF', 'type' => 'RIM', 'detail_brand_id' => 7],
+            ['id' => 8, 'name' => 'SK68 S', 'type' => 'RIM', 'detail_brand_id' => 7],
+        ]);
+
+        DB::table('shop_products')->insert([
+            ['id' => 1, 'price' => 228800, 'detail_model_id' => 4, 'detail_id' => 1],
+            ['id' => 2, 'price' => 226200, 'detail_model_id' => 5, 'detail_id' => 2],
+            ['id' => 3, 'price' => 200200, 'detail_model_id' => 6, 'detail_id' => 3],
+            ['id' => 5, 'price' => 192400, 'detail_model_id' => 7, 'detail_id' => 2],
+            ['id' => 6, 'price' => 210600, 'detail_model_id' => 8, 'detail_id' => 3],
+        ]);
     }
 
     /**

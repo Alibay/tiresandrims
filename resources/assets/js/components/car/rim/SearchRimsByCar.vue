@@ -1,6 +1,16 @@
 <template>
     <div>
-        <select-modification :brands="brands" :on-modification-change="onModificationChange" />
+        <select-modification
+                :brands="brands"
+                :initModels="initModels"
+                :initGenerations="initGenerations"
+                :initModifications="initModifications"
+                :initSelectedBrand="initSelectedBrand"
+                :initSelectedModel="initSelectedModel"
+                :initSelectedGeneration="initSelectedGeneration"
+                :initSelectedModification="initSelectedModification"
+                :on-modification-change="onModificationChange"
+        />
         <div v-if="selectedModification > 0">
             <div class="row">
                 <div class="col-md-12" v-if="factoryEquipments.length > 0">
@@ -31,6 +41,87 @@
                 </div>
             </div>
             <select-wheel-model :disabled="chosenEquipments.length == 0"/>
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="byParams">Подбор: строго по параметрам</label>
+                    <input type="checkbox" id="byParams"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="withoutWidth">без учета ширины</label>
+                    <input type="checkbox" id="withoutWidth"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="withoutET">без учета вылета</label>
+                    <input type="checkbox" id="withoutET"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <label for="withoutDIA">без учета цент. отверстия</label>
+                    <input type="checkbox" id="withoutDIA"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Ширина диска:</label>
+                    <vue-slider
+                        :min="rim.initialMinWidth"
+                        :max="rim.initialMaxWidth"
+                        v-model="rim.value"
+                        :interval="rim.step">
+                    </vue-slider>
+                </div>
+                <div class="col-md-3">
+                    <label>Диапазон с</label>
+                    <input type="text" class="form-control" v-model="rim.value[0]" />
+                </div>
+                <div class="col-md-3">
+                    <label>по</label>
+                    <input type="text" class="form-control" v-model="rim.value[1]" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Вылет:</label>
+                    <vue-slider
+                            :min="et.initialMin"
+                            :max="et.initialMax"
+                            v-model="et.value"
+                            :interval="et.step">
+                    </vue-slider>
+                </div>
+                <div class="col-md-3">
+                    <label>Диапазон с</label>
+                    <input type="text" class="form-control" v-model="et.value[0]" />
+                </div>
+                <div class="col-md-3">
+                    <label>по</label>
+                    <input type="text" class="form-control" v-model="et.value[1]" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <label>Вылет:</label>
+                    <vue-slider
+                            :min="dia.initialMin"
+                            :max="dia.initialMax"
+                            v-model="dia.value"
+                            :interval="dia.step">
+                    </vue-slider>
+                </div>
+                <div class="col-md-3">
+                    <label>Диапазон с</label>
+                    <input type="text" class="form-control" v-model="dia.value[0]" />
+                </div>
+                <div class="col-md-3">
+                    <label>по</label>
+                    <input type="text" class="form-control" v-model="dia.value[1]" />
+                </div>
+            </div>
             <button type="submit" class="btn btn-default btn-lg" :disabled="chosenEquipments.length == 0">Искать</button>
         </div>
     </div>
@@ -38,17 +129,47 @@
 
 <script>
     import Select2 from './../../common/Select2.vue';
-    import SelectWheelModel from './../wheel-model/SelectWheelModel.vue';
+    import SelectDetailModel from './../detail/SelectWheelModel.vue';
     import SelectModification from './../modification/SelectModification.vue';
     import RimLabel from './../rim/RimLabel.vue';
     import TireLabel from './../tire/TireLabel.vue';
     import BoltLabel from './../bolt/BoltLabel.vue';
 
+    import VueSliderComponent from 'vue-slider-component';
+    import 'vue-range-slider/dist/vue-range-slider.css';
+
     export default {
-        props: ['brands'],
+        props: [
+            'brands',
+            'initSelectedBrand',
+            'initModels',
+            'initSelectedModel',
+            'initGenerations',
+            'initModifications',
+            'initSelectedGeneration',
+            'initSelectedModification',
+        ],
 
         data () {
             return {
+                rim: {
+                    value: [4.5, 10],
+                    initialMinWidth: 4.5,
+                    initialMaxWidth: 10,
+                    step: 0.5,
+                },
+                et: {
+                    value: [-20, 55],
+                    initialMin: -20,
+                    initialMax: 55,
+                    step: 1,
+                },
+                dia: {
+                    value: [54.1, 76.0],
+                    initialMin: 54.1,
+                    initialMax: 76.0,
+                    step: 0.1,
+                },
                 selectedModification: 0,
                 equipmentsCache: {},
                 modifications: [],
@@ -64,6 +185,10 @@
         },
 
         methods: {
+
+            onRimWidthChanged: function() {
+                [this.rim.minWidth, this.rim.maxWidth] = this.$refs.rimWidthSlider.getValue();;
+            },
 
             onModificationChange: function ( modification ) {
                 this.selectedModification = modification;
@@ -95,26 +220,16 @@
                     }
                 });
             },
-
-            /*changeEquipment: function ( equipment ) {
-                if (equipment.id in this.chosenEquipments) {
-                    delete this.chosenEquipments[equipment.id];
-                } else {
-                    this.chosenEquipments[equipment.id] = 0;
-                }
-
-                this.selectedAnyEquipments =_.isEmpty(this.chosenEquipment);
-                console.log(this.selectedAnyEquipments);
-            }*/
         },
 
         components: {
             'select2': Select2,
-            'select-wheel-model': SelectWheelModel,
+            'select-detail-model': SelectDetailModel,
             'select-modification': SelectModification,
             'rim-label': RimLabel,
             'tire-label': TireLabel,
             'bolt-label': BoltLabel,
+            'vue-slider': VueSliderComponent,
         }
     }
 </script>
