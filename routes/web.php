@@ -29,5 +29,3 @@ Route::get('/products', 'Shop\ProductController@show')->name('products');
 
 Route::get('/my-cars', 'UserController@myCars')->name('my-cars');
 Route::get('/my-orders', 'UserController@myOrders')->name('my-orders');
-
-Route::get('/detail-models', 'Car\DetailModelController@apiFindByDetailIds')->name('api-1modification-equipments');

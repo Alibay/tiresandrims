@@ -4,11 +4,11 @@
             <div class="form-group">
                 <label>Производитель</label>
                 <select2
-                        :options="[]"
+                        :options="brands()"
                         :change="onManufacturerChange"
                         :minimumResultsForSearch="5"
-                        v-model="selectedManufacturer"
-                        defaultText="Выберите производитель"
+                        v-model="selectedBrand"
+                        defaultText="Выберите производителя"
                         :disabled="disabled">
                 </select2>
             </div>
@@ -17,10 +17,10 @@
             <div class="form-group">
                 <label>Модель</label>
                 <select2
-                        :options="[]"
+                        :options="models()"
                         :change="onManufacturerModelChange"
                         :minimumResultsForSearch="5"
-                        v-model="selectedManufacturerModel"
+                        v-model="selectedModel"
                         defaultText="Выберите модель"
                         :disabled="disabled">
                 </select2>
@@ -33,7 +33,39 @@
     import Select2 from './../../common/Select2.vue';
 
     export default {
-        props: ['data', 'ids', 'type', 'disabled'],
+        props: ['data', 'disabled'],
+
+        data: function () {
+            return {
+                selectedBrand: 0,
+                selectedModel: 0,
+
+                brands: function () {
+                    return this.data.map(item => {
+                                return {
+                                    id: item.id,
+                                    text: item.name,
+                                };
+                            });
+                },
+
+                models: function () {
+                    for (var i in this.data) {
+                        if (this.data[i].id == this.selectedBrand) {
+
+                            return this.data[i].models.map(model => {
+                                        return {
+                                            id: model.id,
+                                            text: model.name,
+                                        };
+                                    });
+                        }
+                    }
+
+                    return [];
+                }
+            };
+        },
 
         methods: {
             onManufacturerChange: function () {
@@ -44,18 +76,6 @@
 
             },
         },
-
-        /*watch: {
-            ids: function (value, oldValue) {
-                if (value == oldValue)
-                    return;
-
-                this.$http.get(laroute(''))
-                        .then(data => {
-
-                        });
-            }
-        },*/
 
         components: {
             'select2': Select2,

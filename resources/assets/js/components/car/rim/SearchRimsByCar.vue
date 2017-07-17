@@ -43,6 +43,7 @@
             <select-detail-model
                     :disabled="chosenEquipments.length == 0"
                     type="RIM"
+                    :data="detailBrandsModels"
                     :ids="chosenRims()"
             />
             <div class="row">
@@ -187,6 +188,7 @@
                 nonFactoryEquipments: [],
                 equipments: [],
                 chosenEquipments: [],
+                detailBrandsModels: [],
 
                 chosenRims: function () {
                     return this.equipments
@@ -197,6 +199,13 @@
                 tireUrl: function ( tire ) {
                     return laroute.route('tire-search-by-car');
                 },
+            }
+        },
+
+        watch: {
+            chosenEquipments: function (value, oldValue) {
+                this.$http.get(laroute.route('api-detail-models', { ids: this.chosenRims(), type: 'RIM' }))
+                        .then(data => { this.detailBrandsModels = data.body; });
             }
         },
 

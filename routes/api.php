@@ -22,3 +22,4 @@ Route::get('/models/{modelId}/generations', 'Car\GenerationController@apiFindGen
 Route::get('/generations/{generationId}/modifications', 'Car\ModificationController@apiFindModifications')->name('api-generation-modifications');
 Route::get('/modifications/{modificationId}/equipments', 'Car\EquipmentController@apiFindEquipments')->name('api-modification-equipments');
 
+Route::get('/detail-models', 'Car\DetailModelController@apiFindByDetailIds')->name('api-detail-models');

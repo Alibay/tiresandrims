@@ -12182,7 +12182,7 @@ var __WEBPACK_AMD_DEFINE_RESULT__;var _typeof = typeof Symbol === "function" && 
 
             absolute: false,
             rootUrl: 'http://localhost',
-            routes: [{ "host": null, "methods": ["GET", "HEAD"], "uri": "api\/user", "name": null, "action": "Closure" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/brands\/{brandId}\/models", "name": "api-brand-models", "action": "App\Http\Controllers\Car\ModelController@apiFindModels" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/models\/{modelId}\/generations", "name": "api-model-generations", "action": "App\Http\Controllers\Car\GenerationController@apiFindGenerations" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/generations\/{generationId}\/modifications", "name": "api-generation-modifications", "action": "App\Http\Controllers\Car\ModificationController@apiFindModifications" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/modifications\/{modificationId}\/equipments", "name": "api-modification-equipments", "action": "App\Http\Controllers\Car\EquipmentController@apiFindEquipments" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "register", "name": "register", "action": "App\Http\Controllers\AuthController@showRegisterForm" }, { "host": null, "methods": ["POST"], "uri": "register", "name": null, "action": "App\Http\Controllers\AuthController@register" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login", "name": "login", "action": "App\Http\Controllers\AuthController@showLoginForm" }, { "host": null, "methods": ["POST"], "uri": "login", "name": null, "action": "App\Http\Controllers\AuthController@login" }, { "host": null, "methods": ["POST"], "uri": "logout", "name": "logout", "action": "App\Http\Controllers\AuthController@logout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "dashboard", "name": "dashboard", "action": "App\Http\Controllers\HomeController@dashboard" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "\/", "name": "home", "action": "App\Http\Controllers\HomeController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "search-rims-by-car", "name": "rim-search-by-car", "action": "App\Http\Controllers\Car\RimController@searchByCar" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "search-rims-by-params", "name": "rim-search-by-params", "action": "App\Http\Controllers\Car\RimController@searchByParams" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "search-tires-by-car", "name": "tire-search-by-car", "action": "App\Http\Controllers\HomeController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "products", "name": "products", "action": "App\Http\Controllers\Shop\ProductController@show" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "my-cars", "name": "my-cars", "action": "AppHttpControllersUserController@myCars" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "my-orders", "name": "my-orders", "action": "AppHttpControllersUserController@myOrders" }],
+            routes: [{ "host": null, "methods": ["GET", "HEAD"], "uri": "api\/user", "name": null, "action": "Closure" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/brands\/{brandId}\/models", "name": "api-brand-models", "action": "App\Http\Controllers\Car\ModelController@apiFindModels" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/models\/{modelId}\/generations", "name": "api-model-generations", "action": "App\Http\Controllers\Car\GenerationController@apiFindGenerations" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/generations\/{generationId}\/modifications", "name": "api-generation-modifications", "action": "App\Http\Controllers\Car\ModificationController@apiFindModifications" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/modifications\/{modificationId}\/equipments", "name": "api-modification-equipments", "action": "App\Http\Controllers\Car\EquipmentController@apiFindEquipments" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "api\/detail-models", "name": "api-detail-models", "action": "App\Http\Controllers\Car\DetailModelController@apiFindByDetailIds" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "register", "name": "register", "action": "App\Http\Controllers\AuthController@showRegisterForm" }, { "host": null, "methods": ["POST"], "uri": "register", "name": null, "action": "App\Http\Controllers\AuthController@register" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "login", "name": "login", "action": "App\Http\Controllers\AuthController@showLoginForm" }, { "host": null, "methods": ["POST"], "uri": "login", "name": null, "action": "App\Http\Controllers\AuthController@login" }, { "host": null, "methods": ["POST"], "uri": "logout", "name": "logout", "action": "App\Http\Controllers\AuthController@logout" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "dashboard", "name": "dashboard", "action": "App\Http\Controllers\HomeController@dashboard" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "\/", "name": "home", "action": "App\Http\Controllers\HomeController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "poisk-diskov-po-avto\/{brand?}\/{model?}\/{generation?}\/{modification?}", "name": "rim-search-by-car", "action": "App\Http\Controllers\Car\RimController@searchByCar" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "poisk-diskov-po-parametram", "name": "rim-search-by-params", "action": "App\Http\Controllers\Car\RimController@searchByParams" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "poisk-shin-po-avto", "name": "tire-search-by-car", "action": "App\Http\Controllers\HomeController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "poisk-shin-po-parametram", "name": "tire-search-by-car", "action": "App\Http\Controllers\HomeController@index" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "products", "name": "products", "action": "App\Http\Controllers\Shop\ProductController@show" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "my-cars", "name": "my-cars", "action": "AppHttpControllersUserController@myCars" }, { "host": null, "methods": ["GET", "HEAD"], "uri": "my-orders", "name": "my-orders", "action": "AppHttpControllersUserController@myOrders" }],
             prefix: '',
 
             route: function route(name, parameters, _route) {
@@ -42363,23 +42363,45 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-    props: ['data', 'ids', 'type', 'disabled'],
+    props: ['data', 'disabled'],
+
+    data: function data() {
+        return {
+            selectedBrand: 0,
+            selectedModel: 0,
+
+            brands: function brands() {
+                return this.data.map(function (item) {
+                    return {
+                        id: item.id,
+                        text: item.name
+                    };
+                });
+            },
+
+            models: function models() {
+                for (var i in this.data) {
+                    if (this.data[i].id == this.selectedBrand) {
+
+                        return this.data[i].models.map(function (model) {
+                            return {
+                                id: model.id,
+                                text: model.name
+                            };
+                        });
+                    }
+                }
+
+                return [];
+            }
+        };
+    },
 
     methods: {
         onManufacturerChange: function onManufacturerChange() {},
 
         onManufacturerModelChange: function onManufacturerModelChange() {}
     },
-
-    /*watch: {
-        ids: function (value, oldValue) {
-            if (value == oldValue)
-                return;
-             this.$http.get(laroute(''))
-                    .then(data => {
-                     });
-        }
-    },*/
 
     components: {
         'select2': __WEBPACK_IMPORTED_MODULE_0__common_Select2_vue___default.a
@@ -42773,6 +42795,7 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 //
 //
 //
+//
 
 
 
@@ -42819,6 +42842,7 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
             nonFactoryEquipments: [],
             equipments: [],
             chosenEquipments: [],
+            detailBrandsModels: [],
 
             chosenRims: function chosenRims() {
                 var _this = this;
@@ -42837,6 +42861,16 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
     },
 
 
+    watch: {
+        chosenEquipments: function chosenEquipments(value, oldValue) {
+            var _this2 = this;
+
+            this.$http.get(laroute.route('api-detail-models', { ids: this.chosenRims(), type: 'RIM' })).then(function (data) {
+                _this2.detailBrandsModels = data.body;
+            });
+        }
+    },
+
     methods: {
 
         onRimWidthChanged: function onRimWidthChanged() {
@@ -42850,7 +42884,7 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
         },
 
         onModificationChange: function onModificationChange(modification) {
-            var _this2 = this;
+            var _this3 = this;
 
             this.selectedModification = modification;
 
@@ -42863,8 +42897,8 @@ var _slicedToArray = function () { function sliceIterator(arr, i) { var _arr = [
 
             if (!(this.selectedModification in this.equipmentsCache)) {
                 this.$http.get(laroute.route('api-modification-equipments', { modificationId: this.selectedModification })).then(function (data) {
-                    _this2.equipmentsCache[_this2.selectedModification] = _this2.equipments = data.body;
-                    _this2.separateEquipments(_this2.equipmentsCache[_this2.selectedModification]);
+                    _this3.equipmentsCache[_this3.selectedModification] = _this3.equipments = data.body;
+                    _this3.separateEquipments(_this3.equipmentsCache[_this3.selectedModification]);
                 });
             } else {
                 this.equipments = this.equipmentsCache[this.selectedModification];
@@ -43628,18 +43662,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group"
   }, [_c('label', [_vm._v("Производитель")]), _vm._v(" "), _c('select2', {
     attrs: {
-      "options": [],
+      "options": _vm.brands(),
       "change": _vm.onManufacturerChange,
       "minimumResultsForSearch": 5,
-      "defaultText": "Выберите производитель",
+      "defaultText": "Выберите производителя",
       "disabled": _vm.disabled
     },
     model: {
-      value: (_vm.selectedManufacturer),
+      value: (_vm.selectedBrand),
       callback: function($$v) {
-        _vm.selectedManufacturer = $$v
+        _vm.selectedBrand = $$v
       },
-      expression: "selectedManufacturer"
+      expression: "selectedBrand"
     }
   })], 1)]), _vm._v(" "), _c('div', {
     staticClass: "col-md-6"
@@ -43647,18 +43681,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "form-group"
   }, [_c('label', [_vm._v("Модель")]), _vm._v(" "), _c('select2', {
     attrs: {
-      "options": [],
+      "options": _vm.models(),
       "change": _vm.onManufacturerModelChange,
       "minimumResultsForSearch": 5,
       "defaultText": "Выберите модель",
       "disabled": _vm.disabled
     },
     model: {
-      value: (_vm.selectedManufacturerModel),
+      value: (_vm.selectedModel),
       callback: function($$v) {
-        _vm.selectedManufacturerModel = $$v
+        _vm.selectedModel = $$v
       },
-      expression: "selectedManufacturerModel"
+      expression: "selectedModel"
     }
   })], 1)])])
 },staticRenderFns: []}
@@ -43819,6 +43853,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "disabled": _vm.chosenEquipments.length == 0,
       "type": "RIM",
+      "data": _vm.detailBrandsModels,
       "ids": _vm.chosenRims()
     }
   }), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._m(1), _vm._v(" "), _vm._m(2), _vm._v(" "), _vm._m(3), _vm._v(" "), _c('div', {

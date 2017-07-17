@@ -13,15 +13,19 @@ class DetailModelController extends Controller
 
     public function apiFindByDetailIds (Request $request)
     {
+        $type = $request->input('type');
+
         $ids = $request->input('ids', []);
         if (empty($ids))
             return [];
+
+        $ids = explode(',', $ids);
 
         $models =  DB::table('car_detail_models')
             ->join('shop_products', 'car_detail_models.id', '=', 'shop_products.detail_model_id')
             ->select('car_detail_models.*')
             ->whereIn('shop_products.detail_id', $ids)
-            ->where('car_detail_models.type', Rim::TYPE_NAME)
+            ->where('car_detail_models.type', $type)
             ->get();
 
         $brandId = array_unique(array_map(function ( $model ) {
