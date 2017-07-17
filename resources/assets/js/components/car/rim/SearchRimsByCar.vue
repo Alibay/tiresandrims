@@ -42,9 +42,8 @@
             </div>
             <select-detail-model
                     :disabled="chosenEquipments.length == 0"
-                    type="RIM"
                     :data="detailBrandsModels"
-                    :ids="chosenRims()"
+                    :iniSelectedBrand="initSelectedDetailBrand"
             />
             <div class="row">
                 <div class="col-md-12">
@@ -182,6 +181,8 @@
                     step: 0.1,
                 },
                 selectedModification: 0,
+                initSelectedDetailBrand: 0,
+
                 equipmentsCache: {},
                 modifications: [],
                 factoryEquipments: [],
@@ -205,7 +206,7 @@
         watch: {
             chosenEquipments: function (value, oldValue) {
                 this.$http.get(laroute.route('api-detail-models', { ids: this.chosenRims(), type: 'RIM' }))
-                        .then(data => { this.detailBrandsModels = data.body; });
+                        .then(data => { this.detailBrandsModels = data.body; this.initSelectedDetailBrand = 7; });
             }
         },
 
