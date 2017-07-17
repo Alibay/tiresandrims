@@ -33,7 +33,7 @@
     import Select2 from './../../common/Select2.vue';
 
     export default {
-        props: ['data', 'disabled'],
+        props: ['data', 'ids', 'type', 'disabled'],
 
         methods: {
             onManufacturerChange: function () {
@@ -44,6 +44,18 @@
 
             },
         },
+
+        /*watch: {
+            ids: function (value, oldValue) {
+                if (value == oldValue)
+                    return;
+
+                this.$http.get(laroute(''))
+                        .then(data => {
+
+                        });
+            }
+        },*/
 
         components: {
             'select2': Select2,

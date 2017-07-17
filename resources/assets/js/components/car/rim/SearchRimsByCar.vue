@@ -40,7 +40,11 @@
                     </div>
                 </div>
             </div>
-            <select-detail-model :disabled="chosenEquipments.length == 0"/>
+            <select-detail-model
+                    :disabled="chosenEquipments.length == 0"
+                    type="RIM"
+                    :ids="chosenRims()"
+            />
             <div class="row">
                 <div class="col-md-12">
                     <label for="byParams">Подбор: строго по параметрам</label>
@@ -183,6 +187,12 @@
                 nonFactoryEquipments: [],
                 equipments: [],
                 chosenEquipments: [],
+
+                chosenRims: function () {
+                    return this.equipments
+                            .filter(equipment => this.chosenEquipments.indexOf(equipment.rim.id) != -1)
+                            .map(equipment => equipment.rim.id);
+                },
 
                 tireUrl: function ( tire ) {
                     return laroute.route('tire-search-by-car');

@@ -1,7 +1,20 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ibraim
- * Date: 17.07.17
- * Time: 15:58
- */
+
+namespace App\Util;
+
+class ModelUtil
+{
+    public static function fromStd ($class, $data, $passedFillable)
+    {
+        $model = new $class();
+
+        $fillable = $model->getFillable();
+        $model->fillable($passedFillable);
+        $model->fill((array) $data);
+        $model->syncOriginal();
+        $model->exists = true;
+        $model->fillable($fillable);
+
+        return $model;
+    }
+}
