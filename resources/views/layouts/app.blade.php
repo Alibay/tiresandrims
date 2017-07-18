@@ -58,8 +58,10 @@
 
                                 <ul class="dropdown-menu" role="menu">
                                     @if (Sentinel::inRole('member'))
-                                        <li><a href="{{ route('my-cars') }}"> Мои автомобили</a></li>
-                                        <li><a href="{{ route('my-orders') }}"> Мои заказы</a></li>
+                                        <li><a href="{{ route('my-cars') }}">Мои автомобили</a></li>
+                                        <li><a href="{{ route('my-orders') }}">Мои заказы</a></li>
+                                        <li><a href="{{ route('settings') }}">Настройки</a></li>
+                                        <li class="divider"></li>
                                     @endif
                                     <li>
                                         <a href="{{ route('logout') }}"

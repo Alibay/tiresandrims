@@ -13,4 +13,8 @@ class ModificationController extends Controller
         return Modification::where('generation_id', $generationId)->get();
     }
 
+    public function myCars ()
+    {
+        return view('car.modification.my');
+    }
 }

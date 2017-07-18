@@ -4,15 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Routing\Controller;
 
-class HomeController extends Controller
+class UserController extends Controller
 {
-    public function index ()
+    public function settings ()
     {
-        return view('welcome');
-    }
-
-    public function dashboard ()
-    {
-        return view('dashboard');
+        return view('user.settings');
     }
 }
