@@ -19,6 +19,7 @@ Vue.use(vueResource);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 Vue.component('search-rims-by-car', require('./components/car/rim/SearchRimsByCar.vue'));
+Vue.component('search-tires-by-car', require('./components/car/tire/SearchTiresByCar.vue'));
 
 const app = new Vue({
     el: '#app'

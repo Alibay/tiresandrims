@@ -22,8 +22,8 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/poisk-diskov-po-avto/{brand?}/{model?}/{generation?}/{modification?}', 'Car\RimController@searchByCar')->name('rim-search-by-car');
 Route::get('/poisk-diskov-po-parametram', 'Car\RimController@searchByParams')->name('rim-search-by-params');
-Route::get('/poisk-shin-po-avto', 'HomeController@index')->name('tire-search-by-car');
-Route::get('/poisk-shin-po-parametram', 'HomeController@index')->name('tire-search-by-car');
+Route::get('/poisk-shin-po-avto/{brand?}/{model?}/{generation?}/{modification?}', 'Car\TireController@searchByCar')->name('tire-search-by-car');
+Route::get('/poisk-shin-po-parametram', 'HomeController@index')->name('tire-search-by-params');
 
 Route::get('/products', 'Shop\ProductController@show')->name('products');
 

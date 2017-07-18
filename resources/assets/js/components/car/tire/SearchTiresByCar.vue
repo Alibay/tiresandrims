@@ -17,10 +17,11 @@
                     <h3>Заводская комплектация:</h3>
                     <div>
                         <div v-for="equipment in factoryEquipments">
-                            <a v-bind:href="tireUrl(equipment.tire)">
-                                <b><tire-label :data="equipment.tire" /></b>
+                            <tire-label :data="equipment.tire" />
+                            <b>диск</b>:
+                            <a v-bind:href="rimUrl(equipment.tire)">
+                                <rim-label :data="equipment.rim" />
                             </a>
-                            <b>диск</b>: <rim-label :data="equipment.rim" />
                             <input type="checkbox" :value="equipment.id" v-model="chosenEquipments">
                             <bolt-label />
                         </div>
@@ -30,10 +31,11 @@
                     <h3>Варианты замены:</h3>
                     <div>
                         <div v-for="equipment in nonFactoryEquipments">
-                            <a v-bind:href="tireUrl(equipment.tire)">
-                                <b><tire-label :data="equipment.tire" /></b>
+                            <tire-label :data="equipment.tire" />
+                            <b>диск</b>:
+                            <a v-bind:href="rimUrl(equipment.rim)">
+                                <rim-label :data="equipment.rim" />
                             </a>
-                            <b>диск</b>: <rim-label :data="equipment.rim" />
                             <input type="checkbox" :value="equipment.id" v-model="chosenEquipments">
                             <bolt-label />
                         </div>
@@ -197,8 +199,8 @@
                             .map(equipment => equipment.rim.id);
                 },
 
-                tireUrl: function ( tire ) {
-                    return laroute.route('tire-search-by-car');
+                rimUrl: function ( rim ) {
+                    return laroute.route('rim-search-by-car');
                 },
             }
         },

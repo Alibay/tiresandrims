@@ -10,7 +10,7 @@ use App\Car\Modification;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Collection;
 
-class RimController extends Controller
+class TireController extends Controller
 {
 
     public function searchByCar(
@@ -90,7 +90,7 @@ class RimController extends Controller
                 ->get();
         }
 
-        return view('car.rim.searchByCar', $params);
+        return view('car.tire.searchByCar', $params);
     }
 
     public function searchByParams()

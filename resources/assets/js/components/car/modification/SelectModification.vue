@@ -81,9 +81,6 @@
             this.generationsCache[this.selectedModel] = this.transformGenerations(this.initGenerations);
             this.generations = this.generationsCache[this.selectedModel];
 
-            console.log(this.initGenerations);
-            console.log(this.generations);
-
             this.modificationsCache[this.selectedGeneration] = this.transformModifications(this.initModifications);
             this.modifications = this.modificationsCache[this.selectedGeneration];
         },
@@ -165,9 +162,7 @@
                     this.$http.get(laroute.route('api-generation-modifications', { generationId: this.selectedGeneration }))
                             .then(data => {
                         this.modificationsCache[this.selectedGeneration] = this.modifications = this.transformModifications(data.body);
-
-                    console.log(this.modifications);
-                });
+                    });
                 } else {
                     this.modifications = this.modificationsCache[this.selectedGeneration];
                 }
