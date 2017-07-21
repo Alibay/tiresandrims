@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.app-full')
 
 @section('content')
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <h1 class="panel-title">Поиск дисков по автомобилю
@@ -25,6 +25,12 @@
                     />
                 </div>
             </div>
+        </div>
+        <div class="col-md-8">
+            @include('shop.product._list', ['products' => [
+                (object) [ 'id' => 1, 'name' => '155/70R13 82H Matador MP16 Stella 2 (лето)' ],
+                (object) [ 'id' => 2, 'name' => '225/45R17 95V Continental ContiSportContact-6 (лето)' ],
+            ]])
         </div>
     </div>
 </div>

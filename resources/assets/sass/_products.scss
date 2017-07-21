@@ -1,0 +1,29 @@
+.product-list {
+  margin-bottom: 22px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+
+  &.product-list-default {
+    border-color: #d3e0e9;
+
+    .product {
+      border-color: #d3e0e9;
+    }
+  }
+
+  .product-list-body {
+    padding: 0 15px;
+  }
+
+  .product {
+    border-bottom: 1px solid;
+    margin: 0 -15px;
+    padding: 15px;
+  }
+
+  .product:last-of-type {
+    border-bottom-width: 0;
+  }
+}
