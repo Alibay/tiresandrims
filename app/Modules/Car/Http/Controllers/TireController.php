@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Car;
+namespace App\Modules\Car\Http\Controllers;
 
-use App\Car\Brand;
-use App\Car\Equipment;
-use App\Car\Generation;
-use App\Car\Model;
-use App\Car\Modification;
+use App\Modules\Car\Models\Brand;
+use App\Modules\Car\Models\Equipment;
+use App\Modules\Car\Models\Generation;
+use App\Modules\Car\Models\Model;
+use App\Modules\Car\Models\Modification;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Collection;
 

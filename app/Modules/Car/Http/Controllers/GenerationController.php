@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Car;
+namespace App\Modules\Car\Http\Controllers;
 
-use App\Car\Generation;
 use App\Http\Controllers\Controller;
+use App\Modules\Car\Models\Generation;
 
 class GenerationController extends Controller
 {

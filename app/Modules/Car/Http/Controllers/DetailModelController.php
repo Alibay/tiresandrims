@@ -1,9 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\Car;
+namespace App\Modules\Car\Http\Controllers;
 
-use App\Car\DetailBrand;
-use App\Car\Rim;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Car;
+namespace App\Modules\Car\Http\Controllers;
 
-use App\Car\Model;
 use App\Http\Controllers\Controller;
+use App\Modules\Car\Models\Model;
 
 class ModelController extends Controller
 {
