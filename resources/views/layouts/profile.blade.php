@@ -13,14 +13,7 @@
                 </ul>
             </div>
             <div class="col-md-9">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h1>Мои автомобили</h1>
-                    </div>
-                    <div class="panel-body">
-
-                    </div>
-                </div>
+                @yield('profile-content')
             </div>
         </div>
     </div>

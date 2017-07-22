@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="form form-infline">
+    <div class="form">
         @foreach($settings as $setting)
             <div class="form-group">
                 <div class="row">
@@ -29,7 +29,6 @@
                 </div>
             </div>
         @endforeach
-
     </div>
 @endsection
 

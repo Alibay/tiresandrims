@@ -28,6 +28,7 @@ Route::get('/poisk-shin-po-parametram', 'HomeController@index')->name('tire-sear
 
 Route::get('/products', '\App\Modules\Shop\Http\Controllers\ProductController@show')->name('products');
 
-Route::get('/my-cars', '\App\Modules\Car\Http\Controllers\ModificationController@myCars')->name('my-cars');
+Route::get('/my-cars', '\App\Modules\Car\Http\Controllers\CarController@my')->name('my-cars');
+Route::get('/add-car', '\App\Modules\Car\Http\Controllers\CarController@add')->name('add-car');
 Route::get('/my-orders', '\App\Modules\Shop\Http\Controllers\OrderController@myOrders')->name('my-orders');
 Route::get('/settings', 'UserController@settings')->name('settings');
