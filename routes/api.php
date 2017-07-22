@@ -17,9 +17,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/brands/{brandId}/models', 'Car\ModelController@apiFindModels')->name('api-brand-models');
-Route::get('/models/{modelId}/generations', 'Car\GenerationController@apiFindGenerations')->name('api-model-generations');
-Route::get('/generations/{generationId}/modifications', 'Car\ModificationController@apiFindModifications')->name('api-generation-modifications');
-Route::get('/modifications/{modificationId}/equipments', 'Car\EquipmentController@apiFindEquipments')->name('api-modification-equipments');
+Route::get('/brands/{brandId}/models', '\App\Modules\Car\Http\Controllers\ModelController@apiFindModels')->name('api-brand-models');
+Route::get('/models/{modelId}/generations', '\App\Modules\Car\Http\Controllers\GenerationController@apiFindGenerations')->name('api-model-generations');
+Route::get('/generations/{generationId}/modifications', '\App\Modules\Car\Http\Controllers\ModificationController@apiFindModifications')->name('api-generation-modifications');
+Route::get('/modifications/{modificationId}/equipments', '\App\Modules\Car\Http\Controllers\EquipmentController@apiFindEquipments')->name('api-modification-equipments');
 
-Route::get('/detail-models', 'Car\DetailModelController@apiFindByDetailIds')->name('api-detail-models');
+Route::get('/detail-models', '\App\Modules\Car\Http\Controllers\DetailModelController@apiFindByDetailIds')->name('api-detail-models');
