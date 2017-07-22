@@ -42489,6 +42489,7 @@ Vue.use(vueResource);
  */
 Vue.component('search-rims-by-car', __webpack_require__(64));
 Vue.component('search-tires-by-car', __webpack_require__(65));
+Vue.component('select-modification', __webpack_require__(40));
 
 var app = new Vue({
   el: '#app'

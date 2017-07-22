@@ -3,6 +3,7 @@
 namespace App\Modules\Car\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Modules\Car\Models\Brand;
 
 class CarController extends Controller
 {
@@ -13,6 +14,8 @@ class CarController extends Controller
 
     public function add ()
     {
-        return view('car.car.add');
+        $brands = Brand::all();
+
+        return view('car.car.add', compact('brands'));
     }
 }

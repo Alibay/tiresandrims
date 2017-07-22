@@ -20,6 +20,7 @@ Vue.use(vueResource);
  */
 Vue.component('search-rims-by-car', require('./components/car/rim/SearchRimsByCar.vue'));
 Vue.component('search-tires-by-car', require('./components/car/tire/SearchTiresByCar.vue'));
+Vue.component('select-modification', require('./components/car/modification/SelectModification.vue'));
 
 const app = new Vue({
     el: '#app'
