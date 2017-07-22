@@ -10,11 +10,11 @@ class Equipment extends Model
 
     public function rim ()
     {
-        return $this->belongsTo('App\Car\Rim');
+        return $this->belongsTo('App\Modules\Car\Models\Rim');
     }
 
     public function tire ()
     {
-        return $this->belongsTo('App\Car\Tire');
+        return $this->belongsTo('App\Modules\Car\Models\Tire');
     }
 }

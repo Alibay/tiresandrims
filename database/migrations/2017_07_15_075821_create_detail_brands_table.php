@@ -16,6 +16,8 @@ class CreateDetailBrandsTable extends Migration
         Schema::create('car_detail_brands', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
+
+            $table->engine = 'InnoDB';
         });
     }
 

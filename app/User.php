@@ -26,4 +26,16 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    const TYPE_REGULAR = 'REGULAR';
+    const TYPE_PLATINUM = 'PLATINUM';
+    const TYPE_GOLD = 'GOLD';
+    const TYPE_SILVER = 'SILVER';
+
+    public static $types = [
+        self::TYPE_REGULAR,
+        self::TYPE_PLATINUM,
+        self::TYPE_GOLD,
+        self::TYPE_SILVER,
+    ];
 }

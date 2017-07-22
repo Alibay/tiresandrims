@@ -15,8 +15,10 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('shop_orders', function (Blueprint $table) {
             $table->increments('id');
-            $table->enum('status', \App\Shop\Order::$statuses);
+            $table->enum('status', \App\Modules\Shop\Models\Order::$statuses);
             $table->timestamps();
+
+            $table->engine = 'InnoDB';
         });
     }
 

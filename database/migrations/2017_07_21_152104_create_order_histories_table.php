@@ -13,11 +13,13 @@ class CreateOrderHistoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('order_histories', function (Blueprint $table) {
+        Schema::create('shop_order_histories', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('order_id');
-            $table->integer('user_id');
+            $table->integer('order_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
+
+            $table->engine = 'InnoDB';
         });
     }
 
@@ -28,6 +30,6 @@ class CreateOrderHistoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('order_histories');
+        Schema::dropIfExists('shop_order_histories');
     }
 }

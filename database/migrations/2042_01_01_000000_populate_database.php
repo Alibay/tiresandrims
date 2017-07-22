@@ -12,6 +12,20 @@ class PopulateDatabase extends Migration
      */
     public function up()
     {
+        DB::table('settings_groups')->insert([
+            ['id' => 1, 'name' => 'Global'],
+            ['id' => 2, 'name' => 'Shop'],
+            ['id' => 3, 'name' => 'Car'],
+        ]);
+
+        DB::table('settings')->insert([
+            ['id' => 1, 'group_id' => 2, 'name' => 'PLATINUM_CHARGE', 'type' => 'FLOAT', 'value' => '0.00', 'description' => 'Наценка платиновым клиентам', 'values'=> null],
+            ['id' => 2, 'group_id' => 2, 'name' => 'GOLDEN_CHARGE', 'type' => 'FLOAT', 'value' => '5.00', 'description' => 'Наценка золотым клиентам', 'values'=> null],
+            ['id' => 3, 'group_id' => 2, 'name' => 'SILVER_CHARGE', 'type' => 'FLOAT', 'value' => '7.00', 'description' => 'Наценка серебрянным клиентам', 'values'=> null],
+            ['id' => 4, 'group_id' => 2, 'name' => 'PRICE_ROUND', 'type' => 'ENUM', 'value' => '25', 'values'=> '["25", "50", "100"]', 'description' => 'Округление цены до'],
+            ['id' => 5, 'group_id' => 2, 'name' => 'PRICE_ROUND_DIR', 'type' => 'ENUM', 'value' => 'UP', 'values'=> '{"UP": "Наверх", "DOWN": "Вниз", "NEAR": "До ближайшего", "NONE": "Не округлять"}', 'description' => 'Правило округления'],
+        ]);
+
         DB::table('users')->insert([
             ['id' => 1, 'email' => 'admin@mail.com', 'first_name' => 'Admin', 'last_name' => 'Admin', 'password' => bcrypt('pass')],
             ['id' => 2, 'email' => 'moderator@mail.com', 'first_name' => 'Moderator', 'last_name' => 'Moderator', 'password' => bcrypt('pass')],

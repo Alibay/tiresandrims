@@ -18,6 +18,7 @@ Route::post('/login', 'AuthController@login');
 Route::post('/logout', 'AuthController@logout')->name('logout');
 
 Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
+Route::get('/dashboard/settings/params', 'SettingsController@params')->name('settings-params');
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/poisk-diskov-po-avto/{brand?}/{model?}/{generation?}/{modification?}', '\App\Modules\Car\Http\Controllers\RimController@searchByCar')->name('rim-search-by-car');

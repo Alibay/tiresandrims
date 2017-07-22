@@ -24,6 +24,8 @@ class CreateTiresTable extends Migration
             $table->boolean('zr')->default(0);
             $table->boolean('run_flat')->default(0);
             $table->boolean('thorns')->default(0);
+
+            $table->engine = 'InnoDB';
         });
     }
 

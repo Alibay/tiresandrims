@@ -93,6 +93,7 @@ class MigrationCartalystSentinel extends Migration
             $table->index('user_id');
         });
 
+
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
             $table->string('email');
@@ -101,6 +102,8 @@ class MigrationCartalystSentinel extends Migration
             $table->timestamp('last_login')->nullable();
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
+            $table->enum('type', \App\User::$types)->default(\App\User::TYPE_REGULAR);
+            $table->integer('location_id')->default(0);
             $table->timestamps();
 
             $table->engine = 'InnoDB';

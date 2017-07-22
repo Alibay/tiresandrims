@@ -20,6 +20,8 @@ class CreateGenerationsTable extends Migration
             $table->integer('year_to')->unsigned();
             $table->integer('model_id')->unsigned();
             $table->foreign('model_id')->references('id')->on('car_models')->onDelete('cascade');
+
+            $table->engine = 'InnoDB';
         });
     }
 

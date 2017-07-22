@@ -16,7 +16,7 @@
 <body>
     <div id="app" server-rendered="true">
         <nav class="navbar navbar-default navbar-static-top">
-            <div class="container-fluid">
+            <div class="container">
                 <div class="navbar-header">
 
                     <!-- Collapsed Hamburger -->

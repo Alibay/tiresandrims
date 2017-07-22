@@ -28,6 +28,8 @@ class CreateRimsTable extends Migration
             $table->float('pcd', 8, 1);
             $table->float('xfactor', 8, 1)->default(0);
             $table->enum('symmetry', ['S', 'A'])->nullable();
+
+            $table->engine = 'InnoDB';
         });
     }
 

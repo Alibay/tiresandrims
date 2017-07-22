@@ -18,6 +18,8 @@ class CreateModificationsTable extends Migration
             $table->string('name');
             $table->integer('generation_id')->unsigned();
             $table->foreign('generation_id')->references('id')->on('car_generations')->onDelete('cascade');
+
+            $table->engine = 'InnoDB';
         });
     }
 

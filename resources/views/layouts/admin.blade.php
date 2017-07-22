@@ -80,10 +80,10 @@
                         <a href="#"><i class="fa fa-users"></i> @lang('site.users')<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="flot.html">Flot Charts</a>
+                                <a href="flot.html">Клиенты</a>
                             </li>
                             <li>
-                                <a href="morris.html">Morris.js Charts</a>
+                                <a href="morris.html">Администраторы</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
@@ -92,7 +92,7 @@
                         <a href="tables.html"><i class="fa fa-ticket"></i> @lang('site.orders')</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i> @lang('site.cars')<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-car"></i> @lang('site.cars')<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="panels-wells.html">@lang('site.cars:brands')</a>
@@ -104,7 +104,7 @@
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-sitemap fa-fw"></i> Multi-Level Dropdown<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-sitemap fa-fw"></i> Поставщики<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="#">Second Level Item</a>
@@ -134,7 +134,7 @@
                         <!-- /.nav-second-level -->
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
+                        <a href="#"><i class="fa fa-files-o fa-fw"></i> Статьи<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
                                 <a href="blank.html">Blank Page</a>
@@ -144,6 +144,16 @@
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-cog"></i> Настройки<span class="fa arrow"></span>
+                        </a>
+                        <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{ route('settings-params') }}"> Параметры</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -155,7 +165,7 @@
     <div id="page-wrapper">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Dashboard</h1>
+                <h1 class="page-header">@yield('title')</h1>
             </div>
             <!-- /.col-lg-12 -->
         </div>

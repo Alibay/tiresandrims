@@ -19,6 +19,8 @@ class CreateDetailModelsTable extends Migration
             $table->integer('detail_brand_id')->unsigned();
             $table->foreign('detail_brand_id')->references('id')->on('car_detail_brands')->onDelete('cascade');
             $table->enum('type', ['RIM', 'TIRE']);
+
+            $table->engine = 'InnoDB';
         });
     }
 

@@ -20,6 +20,8 @@ class CreateProductsTable extends Migration
             $table->integer('detail_id')->unsigned();
             $table->integer('detail_model_id')->unsigned();
             $table->foreign('detail_model_id')->references('id')->on('car_detail_models')->onDelete('cascade');
+
+            $table->engine = 'InnoDB';
         });
     }
 

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBoltsTable extends Migration
+class CreateSettingsGroupsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateBoltsTable extends Migration
      */
     public function up()
     {
-        Schema::create('car_bolts', function (Blueprint $table) {
+        Schema::create('settings_groups', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
 
@@ -28,6 +28,6 @@ class CreateBoltsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('car_bolts');
+        Schema::dropIfExists('settings_groups');
     }
 }

@@ -18,6 +18,8 @@ class CreateModelsTable extends Migration
             $table->string('name');
             $table->integer('brand_id')->unsigned();
             $table->foreign('brand_id')->references('id')->on('car_brands')->onDelete('cascade');
+
+            $table->engine = 'InnoDB';
         });
     }
 

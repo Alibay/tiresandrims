@@ -17,13 +17,15 @@ class CreateImagesTable extends Migration
             $table->increments('id');
             $table->string('path');
             $table->string('filename');
-            $table->integer('parent_id');
+            $table->integer('parent_id')->unsigned();
             $table->integer('thumb_type')->default(0);
-            $table->integer('assign_id');
+            $table->integer('assign_id')->unsigned();
             $table->enum('assign_type', \App\Image::$assignTypes);
             $table->integer('order')->default(0);
-            $table->integer('width');
-            $table->integer('height');
+            $table->integer('width')->unsigned();
+            $table->integer('height')->unsigned();
+
+            $table->engine = 'InnoDB';
         });
     }
 
